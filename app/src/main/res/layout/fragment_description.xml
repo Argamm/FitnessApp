@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/space_10">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_fitness"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_500"
+        android:src="@drawable/fitness_man_woman"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/layout_frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_400"
+        app:layout_constraintBottom_toBottomOf="@+id/img_fitness"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/white_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_motivation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_frame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/motivation_quest"
+        android:textSize="@dimen/size_26"
+        android:textColor="@color/blue_black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="@font/lato" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_motivation2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/motivation2"
+        android:textColor="@color/dark_blue"
+        android:layout_marginTop="@dimen/space_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_motivation" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/lato"
+        android:paddingVertical="@dimen/size_20"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="@dimen/size_30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_motivation2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
