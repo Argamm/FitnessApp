@@ -21,4 +21,6 @@
     <string name="send">Send</string>
     <string name="feedback_">Feedback...</string>
     <string name="opinion">I will be happy to know your opinion\n about my first App</string>
+    <string name="communicate_wit_us">Communicate wit us</string>
+    <string name="share_with_friends">Share with friends</string>
 </resources>
