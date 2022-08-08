@@ -59,10 +59,10 @@ class EditInformationFragment : Fragment() {
             ) {
 
                 (activity as? MainActivity)?.let {
-                    it.userInfo._name = name.text.toString()
-                    it.userInfo._age = age.text.toString()
-                    it.userInfo._weight = weight.text.toString()
-                    it.userInfo._height = height.text.toString()
+                    it.userInfo.userName = name.text.toString()
+                    it.userInfo.userAge = age.text.toString()
+                    it.userInfo.userWeight = weight.text.toString()
+                    it.userInfo.userHeight = height.text.toString()
                 }
 
                 val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)

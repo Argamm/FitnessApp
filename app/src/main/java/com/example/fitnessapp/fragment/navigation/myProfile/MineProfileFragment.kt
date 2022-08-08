@@ -28,12 +28,12 @@ class MineProfileFragment:Fragment() {
 //        tv_edit_age.text = arguments?.getString(AGE)
 //        tv_edit_gender.text = arguments?.getString("gender")
         (activity as? MainActivity)?.let {
-            tv_edit_name.text = it.userInfo._name
-            tv_edit_weight.text = it.userInfo._weight
-            tv_edit_target_weight.text = it.userInfo._weight
-            tv_edit_height.text = it.userInfo._height
-            tv_edit_age.text = it.userInfo._age
-            tv_edit_gender.text = it.userInfo._gender
+            tv_edit_name.text = it.userInfo.userName
+            tv_edit_weight.text = it.userInfo.userWeight
+            tv_edit_target_weight.text = it.userInfo.userTargetWeight
+            tv_edit_height.text = it.userInfo.userHeight
+            tv_edit_age.text = it.userInfo.userAge
+            tv_edit_gender.text = it.userInfo.userGender
         }
 //        tv_edit_gender.text = arguments?.getString("gender")
     }
