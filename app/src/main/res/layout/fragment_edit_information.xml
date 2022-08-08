@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/space_10">
+    android:background="@drawable/back_fragments">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_name"
@@ -17,7 +17,7 @@
         android:inputType="textPersonName"
         android:paddingVertical="@dimen/space_20"
         android:textColor="@color/white"
-        android:textColorHint="@color/gray"
+        android:textColorHint="#6A6A6A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:inputType="number"
         android:paddingVertical="@dimen/space_20"
         android:textColor="@color/white"
-        android:textColorHint="@color/gray"
+        android:textColorHint="#6A6A6A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_name" />
@@ -51,7 +51,7 @@
         android:inputType="number"
         android:paddingVertical="@dimen/space_20"
         android:textColor="@color/white"
-        android:textColorHint="@color/gray"
+        android:textColorHint="#6A6A6A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_age" />
@@ -68,7 +68,7 @@
         android:inputType="number"
         android:paddingVertical="@dimen/space_20"
         android:textColor="@color/white"
-        android:textColorHint="@color/gray"
+        android:textColorHint="#6A6A6A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_weight" />

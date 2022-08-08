@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/descriptionFragment">
+
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.example.myfitnessapp.fragment.DescriptionFragment"
+        android:label="DescriptionFragment" >
+        <action
+            android:id="@+id/action_descriptionFragment_to_selectGenderFragment"
+            app:destination="@id/selectGenderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectGenderFragment"
+        android:name="com.example.myfitnessapp.fragment.SelectGenderFragment"
+        android:label="SelectGenderFragment" >
+        <action
+            android:id="@+id/action_selectGenderFragment_to_editInformationFragment"
+            app:destination="@id/editInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editInformationFragment"
+        android:name="com.example.myfitnessapp.fragment.EditInformationFragment"
+        android:label="EditInformationFragment" >
+        <action
+            android:id="@+id/action_editInformationFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.myfitnessapp.fragment.navigation.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/analyticsFragment2"
+        android:name="com.example.myfitnessapp.fragment.navigation.AnalyticsFragment"
+        android:label="AnalyticsFragment" />
+    <fragment
+        android:id="@+id/customTrainingsFragment2"
+        android:name="com.example.myfitnessapp.fragment.navigation.CustomTrainingsFragment"
+        android:label="CustomTrainingsFragment" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.myfitnessapp.fragment.navigation.MyProfileFragment"
+        android:label="MyProfileFragment" />
+    <fragment
+        android:id="@+id/trainingsFragment2"
+        android:name="com.example.myfitnessapp.fragment.navigation.TrainingsFragment"
+        android:label="TrainingsFragment" />
+</navigation>

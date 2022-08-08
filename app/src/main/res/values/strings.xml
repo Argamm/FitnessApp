@@ -23,4 +23,21 @@
     <string name="opinion">I will be happy to know your opinion\n about my first App</string>
     <string name="communicate_wit_us">Communicate wit us</string>
     <string name="share_with_friends">Share with friends</string>
+    <string name="calories">Calories</string>
+    <string name="time">Time</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="gmail">Gmail</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="phone_call">Phone Call</string>
+    <string name="enter_date">Enter your date to remainder...</string>
+    <string name="set_remainder">Set Remainder</string>
+    <string name="cancel">Cancel</string>
+    <string name="message">message</string>
+    <string name="title">title</string>
+    <string name="schedule_notification">Schedule Notification</string>
+    <string name="gender">Gender</string>
+    <string name="target_weight">Target weight</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_0">0</string>
 </resources>
