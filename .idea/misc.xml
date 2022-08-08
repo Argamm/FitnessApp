@@ -7,8 +7,14 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/button_background.xml" value="0.156" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/constraint_background.xml" value="0.156" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/edit_text_background.xml" value="0.156" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/ic_baseline_create_24.xml" value="0.227" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.156" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/ic_baseline_notifications_24.xml" value="0.227" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/ic_baseline_star_rate_24.xml" value="0.227" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.156" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/ic_person.xml" value="0.227" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/layout_background.xml" value="0.227" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable-v24/navigation_background.xml" value="0.227" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/back_fragments.xml" value="0.112" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/btn_message_back.xml" value="0.156" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/communicate_buttom_back.xml" value="0.112" />
@@ -19,6 +25,9 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/facebook.xml" value="0.112" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/facebook_logo.xml" value="0.12" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/gmail_back.xml" value="0.112" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_baseline_satellite_alt_24.xml" value="0.227" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.227" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_exit.xml" value="0.227" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.156" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/insta_logo.xml" value="0.112" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/instagram.xml" value="0.112" />

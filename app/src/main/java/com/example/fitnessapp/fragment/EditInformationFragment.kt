@@ -1,6 +1,5 @@
 package com.example.myfitnessapp.fragment
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -11,11 +10,10 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.fitnessapp.MainActivity
 import com.example.fitnessapp.R
-import com.example.fitnessapp.UserInfo
-import com.example.myfitnessapp.fragment.navigation.HomeFragment
-import com.example.fitnessapp.fragment.navigation.myProfile.MineProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.fragment_edit_information.*
 
@@ -25,8 +23,7 @@ const val WEIGHT = "weight"
 const val HEIGHT = "height"
 
 class EditInformationFragment : Fragment() {
-//    private val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
-//    private val navController = navHostFragment.navController
+    lateinit var navController: NavController
     lateinit var name: TextView
     lateinit var age: TextView
     lateinit var weight: TextView
@@ -47,23 +44,12 @@ class EditInformationFragment : Fragment() {
         age = activity?.findViewById(R.id.edt_age)!!
         weight = activity?.findViewById(R.id.edt_weight)!!
         height = activity?.findViewById(R.id.edt_height)!!
-
+        val navHostFragment =
+            activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
 
 
         btn_start.setOnClickListener {
-
-//            if (name.text.isNotEmpty() && age.text.isNotEmpty() && weight.text.isNotEmpty() && height.text.isNotEmpty()) {
-//                val mineProfileFragment = MineProfileFragment()
-//                val args = Bundle()
-//                args.putString(NAME, name.text.toString())
-//            args.putString(AGE, age.text.toString())
-//                args.putString(WEIGHT, weight.text.toString())
-//                args.putString(HEIGHT, height.text.toString())
-//
-//                mineProfileFragment.arguments = args
-
-
-//            }
             if (isValidInputs(
                     name.text.toString(),
                     age.text.toString().toInt(),
@@ -71,11 +57,6 @@ class EditInformationFragment : Fragment() {
                     height.text.toString().toInt()
                 )
             ) {
-//                val userInfo = UserInfo()
-//                userInfo._name = name.text.toString()
-//                userInfo._age = age.text.toString()
-//                userInfo._weight = weight.text.toString()
-//                userInfo._height = height.text.toString()
 
                 (activity as? MainActivity)?.let {
                     it.userInfo._name = name.text.toString()
@@ -86,12 +67,7 @@ class EditInformationFragment : Fragment() {
 
                 val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
                 navBar?.visibility = VISIBLE
-
-                val homeFragment = HomeFragment()
-                activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.container, homeFragment)?.addToBackStack("homePage")
-                    ?.commit()
-//                navController.navigate(R.id.action_editInformationFragment_to_homeFragment2)
+                navController.navigate(R.id.action_editInformationFragment_to_homeFragment2)
 
             }
 

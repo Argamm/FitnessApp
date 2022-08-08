@@ -41,11 +41,69 @@
         android:name="com.example.myfitnessapp.fragment.navigation.CustomTrainingsFragment"
         android:label="CustomTrainingsFragment" />
     <fragment
-        android:id="@+id/myProfileFragment"
+        android:id="@+id/myProfileFragmentNav"
         android:name="com.example.myfitnessapp.fragment.navigation.MyProfileFragment"
-        android:label="MyProfileFragment" />
+        android:label="MyProfileFragment" >
+        <action
+            android:id="@+id/action_myProfileFragmentNav_to_feedbackFragment"
+            app:destination="@id/feedbackFragment" />
+        <action
+            android:id="@+id/action_myProfileFragmentNav_to_mineProfileFragment"
+            app:destination="@id/mineProfileFragment" />
+        <action
+            android:id="@+id/action_myProfileFragmentNav_to_communicateFragment"
+            app:destination="@id/communicateFragment" />
+        <action
+            android:id="@+id/action_myProfileFragmentNav_to_rateUsFragment"
+            app:destination="@id/rateUsFragment" />
+        <action
+            android:id="@+id/action_myProfileFragmentNav_to_remainderFragment"
+            app:destination="@id/remainderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/trainingsFragment2"
         android:name="com.example.myfitnessapp.fragment.navigation.TrainingsFragment"
-        android:label="TrainingsFragment" />
+        android:label="TrainingsFragment" >
+        <action
+            android:id="@+id/action_trainingsFragment2_to_armsFragment"
+            app:destination="@id/armsFragment" />
+        <action
+            android:id="@+id/action_trainingsFragment2_to_legsFragment"
+            app:destination="@id/legsFragment" />
+        <action
+            android:id="@+id/action_trainingsFragment2_to_shortTrainingsFragment"
+            app:destination="@id/shortTrainingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/armsFragment"
+        android:name="com.example.myfitnessapp.fragment.navigation.trainings.ArmsFragment"
+        android:label="ArmsFragment" />
+    <fragment
+        android:id="@+id/legsFragment"
+        android:name="com.example.myfitnessapp.fragment.navigation.trainings.LegsFragment"
+        android:label="LegsFragment" />
+    <fragment
+        android:id="@+id/shortTrainingsFragment"
+        android:name="com.example.myfitnessapp.fragment.navigation.trainings.ShortTrainingsFragment"
+        android:label="ShortTrainingsFragment" />
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.example.myfitnessapp.fragment.navigation.myProfile.FeedbackFragment"
+        android:label="FeedbackFragment" />
+    <fragment
+        android:id="@+id/mineProfileFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.myProfile.MineProfileFragment"
+        android:label="MineProfileFragment" />
+    <fragment
+        android:id="@+id/communicateFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.myProfile.CommunicateFragment"
+        android:label="CommunicateFragment" />
+    <fragment
+        android:id="@+id/rateUsFragment"
+        android:name="com.example.myfitnessapp.fragment.navigation.myProfile.RateUsFragment"
+        android:label="RateUsFragment" />
+    <fragment
+        android:id="@+id/remainderFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.myProfile.RemainderFragment"
+        android:label="RemainderFragment" />
 </navigation>

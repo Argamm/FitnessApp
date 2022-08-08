@@ -1,6 +1,5 @@
 package com.example.fitnessapp.fragment.navigation.myProfile
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.MainActivity
 import com.example.fitnessapp.R
-import com.example.fitnessapp.UserInfo
-import com.example.myfitnessapp.fragment.AGE
-import com.example.myfitnessapp.fragment.HEIGHT
-import com.example.myfitnessapp.fragment.NAME
-import com.example.myfitnessapp.fragment.WEIGHT
 import kotlinx.android.synthetic.main.fragment_mine_profile.*
 
 class MineProfileFragment:Fragment() {

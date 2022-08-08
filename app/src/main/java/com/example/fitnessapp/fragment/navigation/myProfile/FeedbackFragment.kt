@@ -25,17 +25,14 @@ class FeedbackFragment:Fragment() {
             val intent = Intent()
             val gmail = "mehrabyanargam111@gmail.com"
 
-
             if (text.isNotEmpty()) {
                 intent.action = Intent.ACTION_SENDTO
                 intent.putExtra(Intent.EXTRA_EMAIL, gmail)
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
                 intent.putExtra(Intent.EXTRA_TEXT, text)
-//            intent.type = "message/rfc822"
                 intent.data = Uri.parse("mailto:${gmail}")
                 startActivity(intent)
             }
-
         }
     }
 }

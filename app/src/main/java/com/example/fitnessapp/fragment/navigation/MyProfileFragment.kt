@@ -1,20 +1,19 @@
 package com.example.myfitnessapp.fragment.navigation
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.fitnessapp.R
-import com.example.fitnessapp.fragment.navigation.myProfile.CommunicateFragment
-import com.example.myfitnessapp.fragment.navigation.myProfile.FeedbackFragment
-import com.example.fitnessapp.fragment.navigation.myProfile.MineProfileFragment
-import com.example.myfitnessapp.fragment.navigation.myProfile.RateUsFragment
-import com.example.fitnessapp.fragment.navigation.myProfile.RemainderFragment
 import kotlinx.android.synthetic.main.fragment_my_profile.*
 
 class MyProfileFragment : Fragment() {
+    lateinit var navController: NavController
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,32 +23,27 @@ class MyProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
         tv_my_profile.setOnClickListener {
-            val mineProfileFragment = MineProfileFragment()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container, mineProfileFragment)?.addToBackStack("mineFragment")
-                ?.commit()
+            navController.navigate(R.id.action_myProfileFragmentNav_to_mineProfileFragment)
         }
 
         tv_feedback.setOnClickListener {
-            val feedbackFragment = FeedbackFragment()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container, feedbackFragment)?.addToBackStack("feedbackFragment")
-                ?.commit()
+            navController.navigate(R.id.action_myProfileFragmentNav_to_feedbackFragment)
+
         }
 
         tv_remainder.setOnClickListener {
-            val remainderFragment = RemainderFragment()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container, remainderFragment)?.addToBackStack("remainderFragment")
-                ?.commit()
+
+            navController.navigate(R.id.action_myProfileFragmentNav_to_remainderFragment)
+
         }
 
         tv_rate.setOnClickListener {
-            val rateUsFragment = RateUsFragment()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container, rateUsFragment)?.addToBackStack("rateUsFragment")
-                ?.commit()
+            navController.navigate(R.id.action_myProfileFragmentNav_to_rateUsFragment)
+
         }
 
         tv_share.setOnClickListener {
@@ -63,10 +57,15 @@ class MyProfileFragment : Fragment() {
         }
 
         tv_communicate.setOnClickListener {
-            val communicateFragment = CommunicateFragment()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container, communicateFragment)?.addToBackStack("communicate")
-                ?.commit()
+            navController.navigate(R.id.action_myProfileFragmentNav_to_communicateFragment)
+
+        }
+        tv_exit.setOnClickListener {
+            AlertDialog.Builder(context).setTitle("Exit?").setPositiveButton("Ok") {_,_->
+                activity?.finish()
+            }.setNegativeButton("Cancel") {di, _->
+                di.cancel()
+            }.show()
         }
     }
 }

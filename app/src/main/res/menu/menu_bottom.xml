@@ -17,7 +17,6 @@
         android:id="@+id/homeFragment2"
         android:icon="@drawable/ic_home"
         android:orderInCategory="3"
-        android:checked="true"
         android:title="@string/home_" />
     <item
         android:id="@+id/analyticsFragment2"
