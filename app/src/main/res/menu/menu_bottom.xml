@@ -24,7 +24,7 @@
         android:orderInCategory="4"
         android:title="@string/analytics_" />
     <item
-        android:id="@+id/myProfileFragment"
+        android:id="@+id/myProfileFragmentNav"
         android:icon="@drawable/ic_profile"
         android:orderInCategory="5"
         android:title="@string/my_profile" />

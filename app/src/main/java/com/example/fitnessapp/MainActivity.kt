@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         bottom_nav.setupWithNavController(navController)
-        btnNavClickHandler()
+        //btnNavClickHandler()
 
     }
 
-    private fun btnNavClickHandler() {
+    /*private fun btnNavClickHandler() {
         bottom_nav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.myProfileFragment -> {
@@ -57,6 +57,6 @@ class MainActivity : AppCompatActivity() {
                 bottom_nav.visibility = View.VISIBLE
             }
             true
-        }
-    }
+        }*/
+
 }

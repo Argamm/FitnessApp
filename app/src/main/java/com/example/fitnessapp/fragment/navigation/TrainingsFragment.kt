@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.R
+import com.example.fitnessapp.fragment.navigation.trainings.ABSFragment
 import com.example.myfitnessapp.fragment.adapter.ViewPagerAdapter
 import com.example.myfitnessapp.fragment.navigation.trainings.ArmsFragment
 import com.example.myfitnessapp.fragment.navigation.trainings.LegsFragment
@@ -24,8 +25,8 @@ class TrainingsFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val list = listOf(ArmsFragment(), LegsFragment(), ShortTrainingsFragment())
-        val listNames = listOf("Arms", "Legs", "Short")
+        val list = listOf(ArmsFragment(), LegsFragment(),ABSFragment(), ShortTrainingsFragment())
+        val listNames = listOf("Arms", "Legs","ABS", "Short")
 
         view_pager.adapter = ViewPagerAdapter(this, list)
 

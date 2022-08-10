@@ -43,4 +43,14 @@
     <string name="edit_current_weight">Edit current weight</string>
     <string name="set_weight">Set Weight</string>
     <string name="current_date">Current Date</string>
+    <string name="today_s_training_plan">Today\'s training plan</string>
+    <string name="info">Welcome To My Home Workout App.</string>
+    <string name="info1">Here You can find more useful exercises and information about training at home.</string>
+    <string name="woman">Woman</string>
+    <string name="man">Man</string>
+    <string name="sleep">Sleep</string>
+    <string name="healthy_food">Healthy Food</string>
+    <string name="water">Water</string>
+    <string name="workout">Workout</string>
+    <string name="_0_0">0.0</string>
 </resources>

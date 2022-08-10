@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cons_back">
+    android:background="@drawable/back_fragments">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
                 android:id="@+id/frameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_150"
-                android:background="@drawable/analytics"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_130"
-                android:background="@drawable/datas_background"
+                android:background="@drawable/layout_background"
                 android:paddingVertical="@dimen/space_20"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +36,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/liner_layout_workout"
                     android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/space_20"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
 
@@ -46,9 +46,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato"
-
-                        android:text="Workout"
-                        android:textColor="@color/black"
+                        android:text="@string/workout"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/size_20" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -56,9 +55,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/lato"
-
-                        android:text="0"
-                        android:textColor="@color/black"
+                        android:text="@string/_0"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/size_20" />
 
 
@@ -76,8 +74,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato"
                         android:text="@string/calories"
-
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/size_20" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -85,11 +82,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/lato"
-                        android:text="0.0"
-
-                        android:textColor="@color/black"
+                        android:text="@string/_0_0"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/size_20" />
-
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -104,7 +99,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato"
                         android:text="@string/time"
-                        android:textColor="@color/black"
+                        android:layout_marginEnd="@dimen/space_20"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/size_20" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -112,8 +108,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/lato"
-                        android:text="0:0"
-                        android:textColor="@color/black"
+                        android:text="@string/_0_0"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/size_20" />
 
 
@@ -125,8 +122,13 @@
                 android:id="@+id/edt_current_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/white"
                 android:inputType="number"
+                android:paddingVertical="@dimen/space_15"
+                android:background="@drawable/edt_back_new"
+                android:paddingHorizontal="@dimen/space_20"
                 android:hint="@string/edit_current_weight"
+                android:textColorHint="@color/dark_t"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCalendar" />
@@ -136,6 +138,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/set_weight"
+                android:textSize="@dimen/size_18"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/space_15"
+                android:layout_marginHorizontal="@dimen/space_60"
+                android:background="@drawable/layout_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_current_weight" />
@@ -148,7 +155,7 @@
                 android:gravity="center"
                 android:paddingVertical="@dimen/space_15"
                 android:text="@string/current_date"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/size_20"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/layout_data" />

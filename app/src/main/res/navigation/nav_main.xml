@@ -10,7 +10,12 @@
         android:label="DescriptionFragment" >
         <action
             android:id="@+id/action_descriptionFragment_to_selectGenderFragment"
-            app:destination="@id/selectGenderFragment" />
+            app:destination="@id/selectGenderFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            />
     </fragment>
     <fragment
         android:id="@+id/selectGenderFragment"
@@ -18,7 +23,11 @@
         android:label="SelectGenderFragment" >
         <action
             android:id="@+id/action_selectGenderFragment_to_editInformationFragment"
-            app:destination="@id/editInformationFragment" />
+            app:destination="@id/editInformationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/editInformationFragment"
@@ -26,12 +35,17 @@
         android:label="EditInformationFragment" >
         <action
             android:id="@+id/action_editInformationFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
+            app:destination="@id/homeFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.myfitnessapp.fragment.navigation.HomeFragment"
-        android:label="HomeFragment" />
+        android:name="com.example.fitnessapp.fragment.navigation.HomeFragment"
+        android:label="HomeFragment" >
+    </fragment>
     <fragment
         android:id="@+id/analyticsFragment2"
         android:name="com.example.myfitnessapp.fragment.navigation.AnalyticsFragment"
@@ -46,19 +60,39 @@
         android:label="MyProfileFragment" >
         <action
             android:id="@+id/action_myProfileFragmentNav_to_feedbackFragment"
-            app:destination="@id/feedbackFragment" />
+            app:destination="@id/feedbackFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action
             android:id="@+id/action_myProfileFragmentNav_to_mineProfileFragment"
-            app:destination="@id/mineProfileFragment" />
+            app:destination="@id/mineProfileFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action
             android:id="@+id/action_myProfileFragmentNav_to_communicateFragment"
-            app:destination="@id/communicateFragment" />
+            app:destination="@id/communicateFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action
             android:id="@+id/action_myProfileFragmentNav_to_rateUsFragment"
-            app:destination="@id/rateUsFragment" />
+            app:destination="@id/rateUsFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action
             android:id="@+id/action_myProfileFragmentNav_to_remainderFragment"
-            app:destination="@id/remainderFragment" />
+            app:destination="@id/remainderFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/trainingsFragment2"

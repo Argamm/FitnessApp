@@ -12,4 +12,6 @@
     <color name="gray">#ADADAD</color>
     <color name="gray_dark">#2D303E</color>
     <color name="gray_btn">#8F8E8E</color>
+    <color name="dark_green">#034343</color>
+    <color name="dark_t">#00897B</color>
 </resources>
