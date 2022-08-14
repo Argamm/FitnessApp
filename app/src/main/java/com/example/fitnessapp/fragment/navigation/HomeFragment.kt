@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.R
+import com.example.fitnessapp.fragment.navigation.home.MyDialogFragment
 import kotlinx.android.synthetic.main.fragment_home.*
+
+const val INFO = "info"
+const val IMG = "img"
+const val NAME = "name"
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -19,17 +23,52 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        val fragmentsList = listOf<Fragment>(HomeMainFragment(), TasksFragment())
-//
-//        view_pager_home.adapter = ViewPagerAdapter(this, fragmentsList)
-//
-//        val listNames = listOf("Home", "Tasks")
-//
-//        TabLayoutMediator(tab_layout_home, view_pager_home) { tab, position ->
-//            tab.text = listNames[position]
-//        }.attach()
+        val customDialog = MyDialogFragment()
+        val bundle = Bundle()
+
         lottieHealthyFood.setOnClickListener {
-            Toast.makeText(context, "Avo Cadooo", Toast.LENGTH_SHORT).show()
+            if (context != null) {
+//                bundle.putString(NAME, "food")
+                bundle.putInt(IMG, R.raw.walking_avocado)
+                bundle.putString(INFO, getString(R.string.food_info))
+                customDialog.arguments = bundle
+                activity?.supportFragmentManager?.let { it1 ->
+                    customDialog.show(
+                        it1,
+                        "customDialog1"
+                    )
+                }
+            }
+        }
+
+        lottieSleep.setOnClickListener {
+            if (context != null) {
+//                bundle.putString(NAME, "sleep")
+                bundle.putInt(IMG, R.raw.sleep)
+                bundle.putString(INFO, getString(R.string.sleep_info))
+                customDialog.arguments = bundle
+                activity?.supportFragmentManager?.let { it1 ->
+                    customDialog.show(
+                        it1,
+                        "customDialog2"
+                    )
+                }
+            }
+        }
+
+        lottieWater.setOnClickListener {
+            if (context != null) {
+//                bundle.putString(NAME, "water")
+                bundle.putInt(IMG, R.raw.water)
+                bundle.putString(INFO, getString(R.string.water_info))
+                customDialog.arguments = bundle
+                activity?.supportFragmentManager?.let { it1 ->
+                    customDialog.show(
+                        it1,
+                        "customDialog3"
+                    )
+                }
+            }
         }
     }
 }

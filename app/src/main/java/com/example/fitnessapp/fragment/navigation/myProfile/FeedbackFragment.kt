@@ -26,11 +26,18 @@ class FeedbackFragment:Fragment() {
             val gmail = "mehrabyanargam111@gmail.com"
 
             if (text.isNotEmpty()) {
-                intent.action = Intent.ACTION_SENDTO
-                intent.putExtra(Intent.EXTRA_EMAIL, gmail)
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
-                intent.putExtra(Intent.EXTRA_TEXT, text)
-                intent.data = Uri.parse("mailto:${gmail}")
+                with(intent) {
+                    action = Intent.ACTION_SENDTO
+                    putExtra(Intent.EXTRA_EMAIL, gmail)
+                    putExtra(Intent.EXTRA_SUBJECT, "Feedback")
+                    putExtra(Intent.EXTRA_TEXT, text)
+                    data = Uri.parse("mailto:${gmail}")
+                }
+//                intent.action = Intent.ACTION_SENDTO
+//                intent.putExtra(Intent.EXTRA_EMAIL, gmail)
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
+//                intent.putExtra(Intent.EXTRA_TEXT, text)
+//                intent.data = Uri.parse("mailto:${gmail}")
                 startActivity(intent)
             }
         }

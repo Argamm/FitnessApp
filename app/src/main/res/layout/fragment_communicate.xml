@@ -2,53 +2,68 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/communicate_buttom_back">
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animationCache="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_fragments"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/network" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/space_75"
         android:background="@drawable/facebook"
         android:drawableStart="@drawable/facebook_logo"
+        android:paddingHorizontal="@dimen/space_75"
         android:text="@string/facebook"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/size_20"
+        android:layout_marginVertical="50dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_instagram"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_instagram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/space_75"
         android:background="@drawable/instagram"
-        android:text="@string/instagram"
         android:drawableStart="@drawable/insta_logo"
+        android:paddingHorizontal="@dimen/space_75"
+        android:text="@string/instagram"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/size_20"
         app:layout_constraintBottom_toTopOf="@+id/btn_gmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_facebook" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_gmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/space_75"
         android:background="@drawable/gmail_back"
         android:drawableStart="@drawable/email"
+        android:paddingHorizontal="90dp"
         android:text="@string/gmail"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/size_20"
-        app:layout_constraintBottom_toTopOf="@+id/btn_whatsapp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_instagram" />
@@ -57,10 +72,11 @@
         android:id="@+id/btn_whatsapp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/space_75"
         android:background="@drawable/whatsapp_back"
         android:drawableStart="@drawable/watsapp_24"
+        android:paddingHorizontal="@dimen/space_75"
         android:text="@string/phone_call"
+        android:layout_marginVertical="@dimen/space_50"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/size_20"

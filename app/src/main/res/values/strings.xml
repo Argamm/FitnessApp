@@ -53,4 +53,12 @@
     <string name="water">Water</string>
     <string name="workout">Workout</string>
     <string name="_0_0">0.0</string>
+    <string name="sleep_info">Sleep gives your body time to recover, conserve energy, and repair and build up the muscles worked during exercise. When we get enough good quality sleep, the body produces growth hormone. During childhood and adolescence, growth hormone makes us grow (as the name implies, Winter says. “And when we are older, it helps us build lean muscle and helps our body repair when we have torn ourselves up during a hard workout,” he adds. “Growth hormone is essential for athletic recovery.”</string>
+    <string name="food_info">What are the right foods? Minimally processed foods are the best for sports and weight lifting nutrition. Lean protein, complex carbs and fiber are your best friends, especially if you\'re trying to lose weight. Your body needs lean protein such as turkey, nonfat Greek yogurt, fish and egg whites to build muscle and stay full. Complex carbs, such as green leafy vegetables, give you energy to burn and fiber fills you up and keeps your digestive system and hormones in alignment.Fats should be healthy, mono-saturated fats, such as olive oil, or from plant-based sources rich in omega-3 fatty acids. Walnuts, flaxseeds and similar oils, nuts and seeds provide healthy fats.</string>
+    <string name="water_info">Water is nature’s perfect thirst quencher. Drink plenty of fresh, pure water daily, including with meals. Drink about 16 fluid ounces, or two cups of water, about two hours before a workout. Sip water throughout your workout. If you’re working out in hot weather, be sure to drink more water than you think you need. Thirst is a sign that your body is slightlydehydrated. Drink to stay ahead of your thirst.</string>
+    <string name="see_my_tasks">See My Tasks</string>
+    <string name="task_title">Task title</string>
+    <string name="task_description">Task Description</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="add">Add</string>
 </resources>

@@ -1,6 +1,6 @@
 package com.example.fitnessapp
 
-class UserInfo() {
+class UserInfo {
     var userName:String=""
     var userAge: String=""
     var userWeight: String=""

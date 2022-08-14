@@ -52,8 +52,15 @@
         android:label="AnalyticsFragment" />
     <fragment
         android:id="@+id/customTrainingsFragment2"
-        android:name="com.example.myfitnessapp.fragment.navigation.CustomTrainingsFragment"
-        android:label="CustomTrainingsFragment" />
+        android:name="com.example.fitnessapp.fragment.navigation.CustomTrainingsFragment"
+        android:label="CustomTrainingsFragment" >
+        <action
+            android:id="@+id/action_customTrainingsFragment2_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+        <action
+            android:id="@+id/action_customTrainingsFragment2_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myProfileFragmentNav"
         android:name="com.example.myfitnessapp.fragment.navigation.MyProfileFragment"
@@ -140,4 +147,20 @@
         android:id="@+id/remainderFragment"
         android:name="com.example.fitnessapp.fragment.navigation.myProfile.RemainderFragment"
         android:label="RemainderFragment" />
+    <fragment
+        android:id="@+id/ABSFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.trainings.ABSFragment"
+        android:label="ABSFragment" />
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.customTrainings.EditTaskFragment"
+        android:label="EditTaskFragment" >
+        <action
+            android:id="@+id/action_editTaskFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.customTrainings.TasksFragment"
+        android:label="TasksFragment" />
 </navigation>

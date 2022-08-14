@@ -9,6 +9,7 @@
         android:id="@+id/edt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Gag"
         android:layout_marginHorizontal="@dimen/space_30"
         android:layout_marginTop="@dimen/space_100"
         android:background="@drawable/edit_text_background"
@@ -24,6 +25,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_age"
+        android:text="65"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_30"
@@ -48,6 +50,7 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center"
         android:hint="@string/weight"
+        android:text="75"
         android:inputType="number"
         android:paddingVertical="@dimen/space_20"
         android:textColor="@color/white"
@@ -58,6 +61,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_height"
+        android:text="175"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_30"
