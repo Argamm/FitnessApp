@@ -10,25 +10,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.example.fitnessapp.R
+import com.example.fitnessapp.databinding.FragmentRemainderBinding
 import kotlinx.android.synthetic.main.fragment_remainder.*
 import java.util.*
 
 
 class RemainderFragment : Fragment() {
+    lateinit var binding : FragmentRemainderBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_remainder, container, false)
+    ): View {
+        binding = FragmentRemainderBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         createNotificationChannel()
-        submitButton.setOnClickListener { scheduleNotification() }
+        binding.submitButton.setOnClickListener { scheduleNotification() }
     }
 
     private fun scheduleNotification() {
@@ -70,9 +74,9 @@ class RemainderFragment : Fragment() {
                         "\nAt: " + dateFormat.format(date) + " " + timeFormat.format(date)
             )
             .setPositiveButton("Set Remainder") { _, _ -> }
-//            .setNegativeButton("Cancel") { di, _ ->
-//                di.cancel()
-//            }
+            .setNegativeButton("Cancel") { di, _ ->
+                di.cancel()
+            }
             .show()
     }
 
@@ -82,7 +86,6 @@ class RemainderFragment : Fragment() {
         val day = datePicker.dayOfMonth
         val month = datePicker.month
         val year = datePicker.year
-
         val calendar = Calendar.getInstance()
         calendar.set(year, month, day, hour, minute)
         return calendar.timeInMillis
@@ -98,8 +101,5 @@ class RemainderFragment : Fragment() {
         val notificationManager =
             activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
-//        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//        notificationManager.createNotificationChannel(channel)
     }
-
 }

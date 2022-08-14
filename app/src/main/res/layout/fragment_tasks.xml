@@ -6,23 +6,23 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSeeTasks"
-        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/see_my_tasks"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnSeeTasks"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:hint="@string/task_title"
         android:layout_marginHorizontal="@dimen/space_50"
-        android:layout_marginVertical="@dimen/space_20"/>
+        android:layout_marginVertical="@dimen/space_20"
+        android:hint="@string/task_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSeeTasks" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edtDescription"
@@ -30,10 +30,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_50"
         android:layout_marginVertical="@dimen/space_20"
-        app:layout_constraintTop_toBottomOf="@+id/edtTitle"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/task_description"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="@string/task_description" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTitle" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAddTask"
@@ -43,21 +43,21 @@
         android:layout_marginVertical="@dimen/space_20"
         android:text="@string/add_new_task"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/edtDescription"/>
+        app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/new_task_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="btnAddTask, edtDescription,edtTitle, btnSeeTasks"/>
+        app:constraint_referenced_ids="btnAddTask, edtDescription,edtTitle, btnSeeTasks" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:clipToPadding="false"
         android:paddingTop="@dimen/space_20"
         android:paddingBottom="@dimen/space_20"
-        android:clipToPadding="false"
         app:layout_constraintBottom_toTopOf="@id/btnTaskCreateStart"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,14 +67,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_50"
         android:layout_marginBottom="@dimen/size_26"
-        android:text="Create new Task"
+        android:text="@string/create_new_task"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/tasks_group"
         android:layout_width="wrap_content"
-        app:constraint_referenced_ids="btnTaskCreateStart, recyclerView"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btnTaskCreateStart, recyclerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

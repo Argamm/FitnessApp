@@ -1,4 +1,4 @@
-package com.example.myfitnessapp.fragment.navigation.myProfile
+package com.example.fitnessapp.fragment.navigation.myProfile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,32 +6,34 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.fitnessapp.R
-import kotlinx.android.synthetic.main.fragment_rate_us.*
+import com.example.fitnessapp.databinding.FragmentRateUsBinding
 
 
 class RateUsFragment : Fragment() {
+    lateinit var binding: FragmentRateUsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_rate_us, container, false)
+    ): View {
+        binding = FragmentRateUsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val totalStars = "Total Stars:: " + rating.numStars
-        val ratingA = "Rating :: " + rating.rating
+        super.onViewCreated(view, savedInstanceState)
+        val totalStars = "Total Stars:: " + binding.rating.numStars
+        val ratingA = "Rating :: " + binding.rating.rating
 
 
-        btn_rate.setOnClickListener {
+        binding.btnRate.setOnClickListener {
             Toast.makeText(activity,"""
                         $totalStars
                         $ratingA
                         """.trimIndent(), Toast.LENGTH_LONG
             ).show()
-            btn_rate.isEnabled = false
-            rating.isEnabled = false
+            binding.btnRate.isEnabled = false
+            binding.rating.isEnabled = false
         }
     }
 }

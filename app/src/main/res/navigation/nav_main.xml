@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/descriptionFragment"
-        android:name="com.example.myfitnessapp.fragment.DescriptionFragment"
+        android:name="com.example.fitnessapp.fragment.DescriptionFragment"
         android:label="DescriptionFragment" >
         <action
             android:id="@+id/action_descriptionFragment_to_selectGenderFragment"
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectGenderFragment"
-        android:name="com.example.myfitnessapp.fragment.SelectGenderFragment"
+        android:name="com.example.fitnessapp.fragment.SelectGenderFragment"
         android:label="SelectGenderFragment" >
         <action
             android:id="@+id/action_selectGenderFragment_to_editInformationFragment"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/editInformationFragment"
-        android:name="com.example.myfitnessapp.fragment.EditInformationFragment"
+        android:name="com.example.fitnessapp.fragment.EditInformationFragment"
         android:label="EditInformationFragment" >
         <action
             android:id="@+id/action_editInformationFragment_to_homeFragment2"
@@ -48,22 +48,19 @@
     </fragment>
     <fragment
         android:id="@+id/analyticsFragment2"
-        android:name="com.example.myfitnessapp.fragment.navigation.AnalyticsFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.AnalyticsFragment"
         android:label="AnalyticsFragment" />
     <fragment
         android:id="@+id/customTrainingsFragment2"
         android:name="com.example.fitnessapp.fragment.navigation.CustomTrainingsFragment"
         android:label="CustomTrainingsFragment" >
         <action
-            android:id="@+id/action_customTrainingsFragment2_to_editTaskFragment"
-            app:destination="@id/editTaskFragment" />
-        <action
             android:id="@+id/action_customTrainingsFragment2_to_tasksFragment"
             app:destination="@id/tasksFragment" />
     </fragment>
     <fragment
         android:id="@+id/myProfileFragmentNav"
-        android:name="com.example.myfitnessapp.fragment.navigation.MyProfileFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.MyProfileFragment"
         android:label="MyProfileFragment" >
         <action
             android:id="@+id/action_myProfileFragmentNav_to_feedbackFragment"
@@ -103,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/trainingsFragment2"
-        android:name="com.example.myfitnessapp.fragment.navigation.TrainingsFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.TrainingsFragment"
         android:label="TrainingsFragment" >
         <action
             android:id="@+id/action_trainingsFragment2_to_armsFragment"
@@ -117,19 +114,19 @@
     </fragment>
     <fragment
         android:id="@+id/armsFragment"
-        android:name="com.example.myfitnessapp.fragment.navigation.trainings.ArmsFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.trainings.ArmsFragment"
         android:label="ArmsFragment" />
     <fragment
         android:id="@+id/legsFragment"
-        android:name="com.example.myfitnessapp.fragment.navigation.trainings.LegsFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.trainings.LegsFragment"
         android:label="LegsFragment" />
     <fragment
         android:id="@+id/shortTrainingsFragment"
-        android:name="com.example.myfitnessapp.fragment.navigation.trainings.ShortTrainingsFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.trainings.ShortTrainingsFragment"
         android:label="ShortTrainingsFragment" />
     <fragment
         android:id="@+id/feedbackFragment"
-        android:name="com.example.myfitnessapp.fragment.navigation.myProfile.FeedbackFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.myProfile.FeedbackFragment"
         android:label="FeedbackFragment" />
     <fragment
         android:id="@+id/mineProfileFragment"
@@ -141,7 +138,7 @@
         android:label="CommunicateFragment" />
     <fragment
         android:id="@+id/rateUsFragment"
-        android:name="com.example.myfitnessapp.fragment.navigation.myProfile.RateUsFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.myProfile.RateUsFragment"
         android:label="RateUsFragment" />
     <fragment
         android:id="@+id/remainderFragment"
@@ -151,14 +148,6 @@
         android:id="@+id/ABSFragment"
         android:name="com.example.fitnessapp.fragment.navigation.trainings.ABSFragment"
         android:label="ABSFragment" />
-    <fragment
-        android:id="@+id/editTaskFragment"
-        android:name="com.example.fitnessapp.fragment.navigation.customTrainings.EditTaskFragment"
-        android:label="EditTaskFragment" >
-        <action
-            android:id="@+id/action_editTaskFragment_to_tasksFragment"
-            app:destination="@id/tasksFragment" />
-    </fragment>
     <fragment
         android:id="@+id/tasksFragment"
         android:name="com.example.fitnessapp.fragment.navigation.customTrainings.TasksFragment"

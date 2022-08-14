@@ -5,14 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.fitnessapp.R
+import com.example.fitnessapp.databinding.FragmentAbsBinding
 
 class ABSFragment:Fragment() {
+    lateinit var binding: FragmentAbsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_abs, container, false)
+    ): View {
+        binding = FragmentAbsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }

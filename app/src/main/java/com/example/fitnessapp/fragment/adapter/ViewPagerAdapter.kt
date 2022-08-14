@@ -1,4 +1,4 @@
-package com.example.myfitnessapp.fragment.adapter
+package com.example.fitnessapp.fragment.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

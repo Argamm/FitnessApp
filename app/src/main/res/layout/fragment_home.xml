@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_fragments">
@@ -49,10 +48,10 @@
             app:layout_constraintTop_toBottomOf="@+id/lottieGif" />
 
         <HorizontalScrollView
-            android:layout_marginTop="@dimen/space_20"
             android:id="@+id/scrollHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/tvInfo1">
 
@@ -65,6 +64,7 @@
                     android:id="@+id/lottieHealthyFood"
                     android:layout_width="@dimen/space_150"
                     android:layout_height="@dimen/space_150"
+                    android:layout_margin="@dimen/space_10"
                     android:layout_weight="1"
                     android:background="@drawable/rev_back"
                     app:layout_constraintStart_toStartOf="parent"
@@ -76,19 +76,19 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/healthy_food"
-                    android:textSize="@dimen/size_20"
-                    android:textColor="@color/white"
                     android:paddingVertical="@dimen/space_15"
+                    android:text="@string/healthy_food"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_20"
                     app:layout_constraintEnd_toEndOf="@+id/lottieHealthyFood"
                     app:layout_constraintStart_toStartOf="@id/lottieHealthyFood"
-                    app:layout_constraintTop_toBottomOf="@+id/lottieHealthyFood"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/lottieHealthyFood" />
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lottieSleep"
                     android:layout_width="@dimen/space_150"
                     android:layout_height="@dimen/space_150"
+                    android:layout_margin="@dimen/space_10"
                     android:layout_weight="1"
                     android:background="@drawable/rev_back"
                     app:layout_constraintStart_toEndOf="@+id/lottieHealthyFood"
@@ -96,22 +96,23 @@
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
                     app:lottie_rawRes="@raw/sleep" />
+
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/size_20"
-                    android:textColor="@color/white"
                     android:paddingVertical="@dimen/space_15"
-
-                    app:layout_constraintStart_toStartOf="@+id/lottieSleep"
+                    android:text="@string/sleep"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_20"
                     app:layout_constraintEnd_toEndOf="@+id/lottieSleep"
-                    app:layout_constraintTop_toBottomOf="@+id/lottieSleep"
-                    android:text="@string/sleep"/>
+                    app:layout_constraintStart_toStartOf="@+id/lottieSleep"
+                    app:layout_constraintTop_toBottomOf="@+id/lottieSleep" />
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lottieWater"
                     android:layout_width="@dimen/space_150"
                     android:layout_height="@dimen/space_150"
+                    android:layout_margin="@dimen/space_10"
                     android:layout_weight="1"
                     android:background="@drawable/rev_back"
                     app:layout_constraintStart_toEndOf="@+id/lottieSleep"
@@ -119,16 +120,17 @@
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
                     app:lottie_rawRes="@raw/water" />
+
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/lottieWater"
-                    app:layout_constraintStart_toStartOf="@+id/lottieWater"
-                    app:layout_constraintEnd_toEndOf="@+id/lottieWater"
-                    android:text="@string/water"
                     android:paddingVertical="@dimen/space_15"
+                    android:text="@string/water"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/size_20"
-                    android:textColor="@color/white"/>
+                    app:layout_constraintEnd_toEndOf="@+id/lottieWater"
+                    app:layout_constraintStart_toStartOf="@+id/lottieWater"
+                    app:layout_constraintTop_toBottomOf="@id/lottieWater" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

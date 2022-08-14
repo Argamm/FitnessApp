@@ -16,23 +16,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        bottom_nav.visibility = View.GONE
-
-        bottom_nav.menu.findItem(R.id.homeFragment2).isChecked = true//first checked item
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        bottom_nav.visibility = View.GONE
+
+        bottom_nav.menu.findItem(R.id.homeFragment2).isChecked = true//first checked item
+
         bottom_nav.setupWithNavController(navController)
-        //btnNavClickHandler()
+        btnNavClickHandler()
 
     }
 
-    /*private fun btnNavClickHandler() {
+    private fun btnNavClickHandler() {
         bottom_nav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.myProfileFragment -> {
+                R.id.myProfileFragmentNav -> {
                     navController.navigate(R.id.myProfileFragmentNav)
                     return@setOnItemSelectedListener true
                 }
@@ -57,6 +57,6 @@ class MainActivity : AppCompatActivity() {
                 bottom_nav.visibility = View.VISIBLE
             }
             true
-        }*/
-
+        }
+    }
 }

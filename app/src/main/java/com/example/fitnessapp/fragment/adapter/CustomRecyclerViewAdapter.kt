@@ -40,5 +40,4 @@ class CustomRecyclerViewAdapter : RecyclerView.Adapter<CustomRecyclerViewAdapter
             tvDescription.text = user.taskDescription
         }
     }
-
 }
