@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato"
             android:hint="@string/title"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_30" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato"
             android:hint="@string/message"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_30" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,7 +50,6 @@
         android:layout_marginTop="20dp">
 
         <DatePicker
-
             android:id="@+id/datePicker"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -83,8 +84,10 @@
         android:background="@drawable/btn_message_back"
         android:fontFamily="@font/lato"
         android:paddingHorizontal="@dimen/space_20"
+        android:paddingVertical="@dimen/space_20"
         android:text="@string/schedule_notification"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="@dimen/size_20" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

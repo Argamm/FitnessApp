@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@drawable/back_fragments"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatButton
@@ -9,12 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/see_my_tasks"
+        android:paddingHorizontal="@dimen/space_20"
         android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_20"
+        android:layout_margin="@dimen/space_10"
+        android:background="@drawable/layout_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edtTitle"
+        android:textColorHint="@color/white_blue"
+        android:textColor="@color/white"
+        android:paddingVertical="@dimen/space_20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_50"
@@ -26,6 +35,9 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edtDescription"
+        android:textColorHint="@color/white_blue"
+        android:textColor="@color/white"
+        android:paddingVertical="@dimen/space_20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_50"
@@ -37,8 +49,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAddTask"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_20"
+        android:background="@drawable/layout_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/space_15"
         android:layout_marginHorizontal="@dimen/space_50"
         android:layout_marginVertical="@dimen/space_20"
         android:text="@string/add_new_task"
@@ -65,6 +81,10 @@
         android:id="@+id/btnTaskCreateStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_20"
+        android:background="@drawable/layout_background"
+        android:paddingVertical="@dimen/space_15"
         android:layout_marginHorizontal="@dimen/space_50"
         android:layout_marginBottom="@dimen/size_26"
         android:text="@string/create_new_task"

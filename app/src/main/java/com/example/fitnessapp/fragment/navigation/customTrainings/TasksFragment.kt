@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentTasksBinding
 import com.example.fitnessapp.fragment.adapter.CustomRecyclerViewAdapter
+import com.example.fitnessapp.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_tasks.*
 
 
@@ -36,27 +37,28 @@ class TasksFragment : Fragment() {
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+with(binding) {
+    recyclerView.adapter = recAdapter
+    recyclerView.layoutManager = LinearLayoutManager(context)
 
-        binding.recyclerView.adapter = recAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+    tasksGroup.visibility = View.GONE
 
-        binding.tasksGroup.visibility = View.GONE
+    btnAddTask.setOnClickListener {
+        if (edtTitle.text?.isNotEmpty() == true
+            && edtDescription.text?.isNotEmpty() == true
+        ) {
+            val task =
+                Tasks(edtTitle.text.toString(), edtDescription.text.toString())
 
-        binding.btnAddTask.setOnClickListener {
-            if (binding.edtTitle.text?.isNotEmpty() == true
-                && binding.edtDescription.text?.isNotEmpty() == true
-            ) {
-                val task =
-                    Tasks(binding.edtTitle.text.toString(), binding.edtDescription.text.toString())
-
-                tasksList.add(task)
-                recAdapter.updateData(tasksList)
-                it.hideKeyboard()
-            }
-
-            binding.tasksGroup.visibility = View.VISIBLE
-            binding.newTaskGroup.visibility = View.GONE
+            tasksList.add(task)
+            recAdapter.updateData(tasksList)
+            it.hideKeyboard()
         }
+
+        tasksGroup.visibility = View.VISIBLE
+        newTaskGroup.visibility = View.GONE
+    }
+}
 
         btnTaskCreateStart.setOnClickListener {
             binding.tasksGroup.visibility = View.GONE
@@ -67,11 +69,5 @@ class TasksFragment : Fragment() {
             binding.tasksGroup.visibility = View.VISIBLE
             binding.newTaskGroup.visibility = View.GONE
         }
-    }
-
-    fun View.hideKeyboard() {
-        val inputManager =
-            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputManager.hideSoftInputFromWindow(windowToken, 0)
     }
 }

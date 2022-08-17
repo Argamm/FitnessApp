@@ -30,7 +30,9 @@
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
             android:text="@string/my_profile_"
-            android:textSize="@dimen/size_20" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
         <View
             android:layout_width="match_parent"
@@ -48,9 +50,10 @@
             android:fontFamily="@font/lato"
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
-
             android:text="@string/remainder"
-            android:textSize="@dimen/size_20" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
         <View
             android:layout_width="match_parent"
@@ -70,8 +73,9 @@
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
             android:text="@string/rate_us"
-
-            android:textSize="@dimen/size_20" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
         <View
             android:layout_width="match_parent"
@@ -90,8 +94,10 @@
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
             android:text="@string/feedback"
+            android:textColor="@color/white"
             android:textCursorDrawable="@color/blue_black"
-            android:textSize="@dimen/size_20" />
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
         <View
             android:layout_width="match_parent"
@@ -110,7 +116,9 @@
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
             android:text="@string/share_with_friends"
-            android:textSize="@dimen/size_20" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
         <View
             android:layout_width="match_parent"
@@ -128,9 +136,10 @@
             android:fontFamily="@font/lato"
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
-
             android:text="@string/communicate_wit_us"
-            android:textSize="@dimen/size_20" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
         <View
             android:layout_width="match_parent"
@@ -148,9 +157,10 @@
             android:fontFamily="@font/lato"
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
-
             android:text="@string/exit"
-            android:textSize="@dimen/size_20" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20"
+            app:fontFamily="@font/lato" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

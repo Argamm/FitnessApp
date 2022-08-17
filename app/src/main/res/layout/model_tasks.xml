@@ -5,20 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/space_10"
-    app:cardCornerRadius="@dimen/space_30">
+    app:cardCornerRadius="@dimen/space_30"
+    app:cardPreventCornerOverlap="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/communicate_buttom_back">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
             android:text="@string/task_title"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_26"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -26,17 +34,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_20"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
             android:gravity="center"
             android:paddingVertical="@dimen/space_15"
             android:text="@string/task_description"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_26"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEditTitle" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -44,7 +61,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_20"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

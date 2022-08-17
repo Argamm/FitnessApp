@@ -2,39 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/edt_back_new">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottieRandom"
-                android:layout_width="@dimen/space_200"
-                android:layout_height="@dimen/space_200"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvRandom"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingHorizontal="@dimen/space_15"
-                android:paddingVertical="@dimen/space_10"
-                android:textColor="@color/white"
-                android:textSize="@dimen/size_25"
-                app:layout_constraintTop_toBottomOf="@+id/lottieRandom" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieRandom"
+                    android:layout_width="@dimen/space_200"
+                    android:layout_height="@dimen/space_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRandom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/space_15"
+                    android:paddingVertical="@dimen/space_10"
+                    android:textColor="@color/teal_700"
+                    android:textSize="@dimen/size_18"
+                    app:layout_constraintTop_toBottomOf="@+id/lottieRandom" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </ScrollView>
 
@@ -43,6 +45,7 @@
         android:layout_width="@dimen/space_50"
         android:layout_height="@dimen/space_50"
         android:background="@null"
+        android:layout_margin="@dimen/space_10"
         android:drawableStart="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView" />

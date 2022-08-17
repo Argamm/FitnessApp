@@ -165,6 +165,60 @@
                 android:layout_below="@id/tvData"
                 android:layout_marginTop="30dp"
                 app:layout_constraintTop_toBottomOf="@id/tvData" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWalkCounter"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btn_set_weight"
+                android:text="@string/walk_counter"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:fontFamily="@font/lato"
+                android:layout_marginTop="@dimen/space_50"
+                android:textSize="@dimen/size_26"/>
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:layout_marginTop="@dimen/space_30"
+                android:id="@+id/progress_circular"
+                android:layout_width="@dimen/space_200"
+                android:layout_height="@dimen/space_200"
+                android:layout_marginBottom="@dimen/space_50"
+                app:cpb_background_progressbar_color="#036359"
+                app:cpb_background_progressbar_width="@dimen/space_20"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progress_max="10000"
+                app:cpb_progressbar_color="#FFFFFF"
+                app:cpb_progressbar_width="10dp"
+                app:cpb_round_border="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWalkCounter" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_steps_token"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_26"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_circular"
+                app:layout_constraintEnd_toEndOf="@+id/progress_circular"
+                app:layout_constraintStart_toStartOf="@+id/progress_circular"
+                app:layout_constraintTop_toTopOf="@+id/progress_circular" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_totalMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_10000"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/progress_circular"
+                app:layout_constraintStart_toStartOf="@+id/progress_circular"
+                app:layout_constraintTop_toBottomOf="@+id/tv_steps_token" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

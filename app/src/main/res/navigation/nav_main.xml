@@ -45,6 +45,9 @@
         android:id="@+id/homeFragment2"
         android:name="com.example.fitnessapp.fragment.navigation.HomeFragment"
         android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment2_to_myDialogFragment"
+            app:destination="@id/myDialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/analyticsFragment2"
@@ -152,4 +155,8 @@
         android:id="@+id/tasksFragment"
         android:name="com.example.fitnessapp.fragment.navigation.customTrainings.TasksFragment"
         android:label="TasksFragment" />
+    <dialog
+        android:id="@+id/myDialogFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.home.MyDialogFragment"
+        android:label="MyDialogFragment" />
 </navigation>

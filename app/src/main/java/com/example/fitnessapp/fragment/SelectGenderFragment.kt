@@ -30,13 +30,13 @@ class SelectGenderFragment : Fragment() {
          navController = navHostFragment.navController
         binding.imgWoman.setOnClickListener {
             (activity as? MainActivity)?.let {
-                it.userInfo.userGender = "Woman"
+                it.userInfo.userGender = "Female"
             }
             navController.navigate(R.id.action_selectGenderFragment_to_editInformationFragment)
         }
         binding.imgMan.setOnClickListener {
             (activity as? MainActivity)?.let {
-                it.userInfo.userGender = "Man"
+                it.userInfo.userGender = "Male"
             }
             navController.navigate(R.id.action_selectGenderFragment_to_editInformationFragment)
         }
