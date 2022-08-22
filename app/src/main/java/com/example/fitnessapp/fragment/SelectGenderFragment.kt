@@ -1,5 +1,7 @@
 package com.example.fitnessapp.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,7 @@ import com.example.fitnessapp.databinding.FragmentSelectGenderBinding
 class SelectGenderFragment : Fragment() {
     lateinit var binding: FragmentSelectGenderBinding
     lateinit var navController: NavController
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,19 +28,20 @@ class SelectGenderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPreferences =
+            (activity as MainActivity).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
+
         val navHostFragment =
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
          navController = navHostFragment.navController
         binding.imgWoman.setOnClickListener {
-            (activity as? MainActivity)?.let {
-                it.userInfo.userGender = "Female"
-            }
+            sharedPreferences.edit().putString(EDT_GENDER, "Female").apply()
+
             navController.navigate(R.id.action_selectGenderFragment_to_editInformationFragment)
         }
         binding.imgMan.setOnClickListener {
-            (activity as? MainActivity)?.let {
-                it.userInfo.userGender = "Male"
-            }
+            sharedPreferences.edit().putString(EDT_GENDER, "Male").apply()
+
             navController.navigate(R.id.action_selectGenderFragment_to_editInformationFragment)
         }
     }

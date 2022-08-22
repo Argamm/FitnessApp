@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_30"
-        android:layout_marginTop="@dimen/space_100"
+        android:layout_marginTop="@dimen/space_50"
         android:background="@drawable/edit_text_background"
         android:gravity="center"
         android:hint="@string/name"
@@ -41,6 +41,23 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtPasswordRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_30"
+        android:layout_marginTop="@dimen/space_30"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:inputType="textEmailAddress"
+        android:paddingVertical="@dimen/space_20"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray_b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailRegister" />
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,7 +73,7 @@
         android:textColorHint="@color/gray_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordRegister" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_weight"

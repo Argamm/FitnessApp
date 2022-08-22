@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -24,19 +25,21 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.fitnessapp.MainActivity
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentAnalyticsBinding
+import com.example.fitnessapp.fragment.EDT_TARGET_WEIGHT
+import com.example.fitnessapp.fragment.PREFERENCE_NAME
 import com.example.fitnessapp.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_analytics.*
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class AnalyticsFragment : Fragment(), SensorEventListener {
     private var sensorManager: SensorManager? = null
     private var running = false
     private var totalSteps = 0f
     private var previousTotalSteps = 0f
-    val ACTIVITY_RECOGNITION_REQUEST_CODE = 100
+    private val ACTIVITY_RECOGNITION_REQUEST_CODE = 100
 
     lateinit var navController: NavController
     lateinit var binding: FragmentAnalyticsBinding
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,6 +53,8 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPreferences =
+            (activity as MainActivity).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
 
         val navHostFragment =
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -82,8 +87,7 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
             AlertDialog.Builder(context)
                 .setTitle("Set ${edt_current_weight.text.toString()} Weight?")
                 .setPositiveButton("Set") { _, _ ->
-                    (activity as MainActivity).userInfo.userTargetWeight =
-                        binding.edtCurrentWeight.text.toString()
+                    sharedPreferences.edit().putString(EDT_TARGET_WEIGHT, binding.edtCurrentWeight.text.toString()).apply()
 
                 }.setNegativeButton("Cancel") { dialog, _ ->
                     dialog.cancel()
@@ -92,11 +96,7 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
         }
     }
 
-
     //for walk counter
-
-
-
     private fun requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             ActivityCompat.requestPermissions(

@@ -1,6 +1,8 @@
 package com.example.fitnessapp.fragment.navigation.customTrainings
 
 import android.app.AlertDialog
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fitnessapp.MainActivity
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentTasksBinding
+import com.example.fitnessapp.fragment.PREFERENCE_NAME
 import com.example.fitnessapp.fragment.adapter.CustomRecyclerViewAdapter
 import com.example.fitnessapp.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_tasks.*
@@ -19,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_tasks.*
 class TasksFragment : Fragment() {
     lateinit var navController: NavController
     lateinit var binding: FragmentTasksBinding
+    lateinit var sharedPreferences: SharedPreferences
     var tasksList: MutableList<Tasks> = mutableListOf()
 
     override fun onCreateView(
@@ -31,6 +36,10 @@ class TasksFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        sharedPreferences =
+            (activity as MainActivity).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
+
         var newTasks: MutableList<Tasks> = mutableListOf()
         var bool: Boolean = true
         val recAdapter = CustomRecyclerViewAdapter() { taskList, position ->
@@ -74,7 +83,6 @@ class TasksFragment : Fragment() {
 
                     it.hideKeyboard()
                 }
-
                 tasksGroup.visibility = View.VISIBLE
                 newTaskGroup.visibility = View.GONE
             }
