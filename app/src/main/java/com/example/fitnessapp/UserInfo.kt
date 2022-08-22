@@ -7,4 +7,5 @@ class UserInfo {
     var userHeight: String=""
     var userGender: String=""
     var userTargetWeight: String = ""
+    var userEmail: String = ""
 }

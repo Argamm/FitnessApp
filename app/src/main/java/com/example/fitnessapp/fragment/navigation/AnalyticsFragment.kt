@@ -100,7 +100,7 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
     private fun requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             ActivityCompat.requestPermissions(
-                this.context as Activity,
+                context as Activity,
                 arrayOf(Manifest.permission.ACTIVITY_RECOGNITION),
                 ACTIVITY_RECOGNITION_REQUEST_CODE
             )

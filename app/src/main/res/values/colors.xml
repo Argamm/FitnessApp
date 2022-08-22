@@ -15,4 +15,8 @@
     <color name="dark_green">#034343</color>
     <color name="dark_t">#00897B</color>
     <color name="white_blue">#98E3DB</color>
+    <color name="back_fon_blue_green">#029A87</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="gray_b">#6A6A6A</color>
+    <color name="black_green">#015050</color>
 </resources>

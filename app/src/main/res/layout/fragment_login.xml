@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_fragments"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_20"
+        android:layout_marginTop="@dimen/space_200"
+        android:background="@color/white"
+        android:hint="@string/email"
+        android:paddingVertical="@dimen/space_20"
+        android:paddingStart="@dimen/space_10"
+        android:paddingEnd="@dimen/space_0"
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginHorizontal="@dimen/space_20"
+        android:layout_marginTop="@dimen/space_20"
+        android:background="@color/white"
+        android:autofillHints="password"
+        android:hint="@string/password"
+        android:paddingVertical="@dimen/space_20"
+        android:paddingStart="@dimen/space_10"
+        android:paddingEnd="@dimen/space_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_email" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_20"
+        android:layout_marginTop="@dimen/space_40"
+        android:backgroundTint="@color/light_gray"
+        android:gravity="center"
+        android:paddingVertical="@dimen/space_20"
+        android:text="@string/login"
+        android:textColor="@color/back_fon_blue_green"
+        android:textStyle="bold"
+        android:enabled="false"
+        android:textSize="@dimen/size_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_sing_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sing_up"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/space_60"
+        android:linksClickable="true"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

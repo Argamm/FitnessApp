@@ -50,6 +50,7 @@ class EditInformationFragment : Fragment() {
         binding.edtAge.addTextChangedListener(checkTextWatcher)
         binding.edtWeight.addTextChangedListener(checkTextWatcher)
         binding.edtHeight.addTextChangedListener(checkTextWatcher)
+        binding.edtEmailRegister.addTextChangedListener(checkTextWatcher)
     }
 
     fun buttonClickHandler() {
@@ -58,7 +59,8 @@ class EditInformationFragment : Fragment() {
                     binding.edtName.text.toString(),
                     binding.edtAge.text.toString().toInt(),
                     binding.edtWeight.text.toString().toInt(),
-                    binding.edtHeight.text.toString().toInt()
+                    binding.edtHeight.text.toString().toInt(),
+                    binding.edtEmailRegister.text.toString()
                 )
             ) {
 
@@ -67,6 +69,7 @@ class EditInformationFragment : Fragment() {
                     it.userInfo.userAge = binding.edtAge.text.toString()
                     it.userInfo.userWeight = binding.edtWeight.text.toString()
                     it.userInfo.userHeight = binding.edtHeight.text.toString()
+                    it.userInfo.userEmail = binding.edtEmailRegister.text.toString()
                 }
 
                 val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
@@ -83,16 +86,18 @@ class EditInformationFragment : Fragment() {
             btn_start.setTextColor(Color.rgb(173, 173, 173))
             btn_start.setBackgroundResource(R.drawable.btn_background_before)
 
-            if (binding.edtName.text.isNullOrEmpty() || binding.edtAge.text.isNullOrEmpty() || binding.edtWeight.text.isNullOrEmpty() || binding.edtHeight.text.isNullOrEmpty()) {
+            if (binding.edtName.text.isNullOrEmpty() || binding.edtAge.text.isNullOrEmpty() || binding.edtEmailRegister.text.isNullOrEmpty() || binding.edtWeight.text.isNullOrEmpty() || binding.edtHeight.text.isNullOrEmpty()) {
                 binding.btnStart.isEnabled = false
             }
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            if (binding.edtName.text?.isNotEmpty() == true
-                && binding.edtAge.text?.isNotEmpty() == true
-                && binding.edtWeight.text?.isNotEmpty() == true
-                && binding.edtHeight.text?.isNotEmpty() == true
+            if ((binding.edtName.text?.isNotEmpty() == true)
+                && (binding.edtEmailRegister.text?.isNotEmpty() == true)
+                && (binding.edtAge.text?.isNotEmpty() == true)
+                && (binding.edtWeight.text?.isNotEmpty() == true)
+                && (binding.edtHeight.text?.isNotEmpty() == true)
+
             ) {
                 binding.btnStart.isEnabled = true
                 binding.btnStart.setTextColor(Color.WHITE)
@@ -101,6 +106,7 @@ class EditInformationFragment : Fragment() {
             }
             binding.btnStart.isEnabled =
                 binding.edtName.text?.isNotEmpty() == true
+                        && binding.edtEmailRegister.text?.isNotEmpty() == true
                         && binding.edtAge.text?.isNotEmpty() == true
                         && binding.edtWeight.text?.isNotEmpty() == true
                         && binding.edtHeight.text?.isNotEmpty() == true
@@ -110,7 +116,13 @@ class EditInformationFragment : Fragment() {
         }
     }
 
-    private fun isValidInputs(name: String, age: Int, weight: Int, height: Int): Boolean {
+    private fun isValidInputs(
+        name: String,
+        age: Int,
+        weight: Int,
+        height: Int,
+        email: String
+    ): Boolean {
         when {
             name.isEmpty() || !name.first().isUpperCase() -> {
                 binding.edtName.error = "Name must start with Uppercase letter"
@@ -127,6 +139,12 @@ class EditInformationFragment : Fragment() {
             height <= 129 || height >= 260 -> {
                 binding.edtHeight.error = "Height must be higher 129 and lower 260"
                 return false
+            }
+            !isValidEmail(email) -> {
+                binding.edtEmailRegister.error =
+                    "Wrong Email format, try again with right one!"
+                return false
+
             }
         }
         return true

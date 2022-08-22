@@ -17,11 +17,28 @@
         android:inputType="textPersonName"
         android:paddingVertical="@dimen/space_20"
         android:text="Gag"
+        android:textColorHint="@color/gray_b"
         android:textColor="@color/white"
-        android:textColorHint="#6A6A6A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtEmailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_30"
+        android:layout_marginTop="@dimen/space_30"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingVertical="@dimen/space_20"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray_b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_age"
@@ -36,10 +53,10 @@
         android:paddingVertical="@dimen/space_20"
         android:text="65"
         android:textColor="@color/white"
-        android:textColorHint="#6A6A6A"
+        android:textColorHint="@color/gray_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailRegister" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_weight"
@@ -54,7 +71,7 @@
         android:paddingVertical="@dimen/space_20"
         android:text="75"
         android:textColor="@color/white"
-        android:textColorHint="#6A6A6A"
+        android:textColorHint="@color/gray_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_age" />
@@ -72,7 +89,7 @@
         android:paddingVertical="@dimen/space_20"
         android:text="175"
         android:textColor="@color/white"
-        android:textColorHint="#6A6A6A"
+        android:textColorHint="@color/gray_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_weight" />

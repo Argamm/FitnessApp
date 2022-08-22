@@ -29,6 +29,7 @@ class MineProfileFragment : Fragment() {
                 tvEditHeight.text = it.userInfo.userHeight
                 tvEditAge.text = it.userInfo.userAge
                 tvEditGender.text = it.userInfo.userGender
+                tvEditEmail.text = it.userInfo.userEmail
             }
         }
     }

@@ -9,13 +9,8 @@
         android:name="com.example.fitnessapp.fragment.DescriptionFragment"
         android:label="DescriptionFragment" >
         <action
-            android:id="@+id/action_descriptionFragment_to_selectGenderFragment"
-            app:destination="@id/selectGenderFragment"
-            app:enterAnim="@animator/nav_default_enter_anim"
-            app:exitAnim="@animator/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            />
+            android:id="@+id/action_descriptionFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/selectGenderFragment"
@@ -159,4 +154,15 @@
         android:id="@+id/myDialogFragment"
         android:name="com.example.fitnessapp.fragment.navigation.home.MyDialogFragment"
         android:label="MyDialogFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.fitnessapp.fragment.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_selectGenderFragment"
+            app:destination="@id/selectGenderFragment" />
+    </fragment>
 </navigation>

@@ -30,7 +30,7 @@ class DescriptionFragment : Fragment() {
         navController = navHostFragment.navController
 
         btn_next.setOnClickListener {
-            navController.navigate(DescriptionFragmentDirections.actionDescriptionFragmentToSelectGenderFragment())
+            navController.navigate(DescriptionFragmentDirections.actionDescriptionFragmentToLoginFragment())
         }
     }
 }

@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessapp.R
 import com.example.fitnessapp.fragment.navigation.customTrainings.Tasks
 
-class CustomRecyclerViewAdapter : RecyclerView.Adapter<CustomRecyclerViewAdapter.ViewHolder>() {
+class CustomRecyclerViewAdapter(private var clickListener: (MutableList<Tasks>, Int)->Unit) : RecyclerView.Adapter<CustomRecyclerViewAdapter.ViewHolder>() {
 
-    private val task: MutableList<Tasks> = mutableListOf()
+     var task: MutableList<Tasks> = mutableListOf()
 
     fun updateData(newData: List<Tasks>) {
         task.clear()
@@ -27,6 +27,12 @@ class CustomRecyclerViewAdapter : RecyclerView.Adapter<CustomRecyclerViewAdapter
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.bind(task[position])
+
+        viewHolder.itemView.setOnClickListener {
+            clickListener(task, position)
+        }
+
+
     }
 
     override fun getItemCount() = task.size

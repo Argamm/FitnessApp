@@ -1,11 +1,10 @@
 package com.example.fitnessapp.fragment.navigation.customTrainings
 
-import android.content.Context
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -20,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_tasks.*
 class TasksFragment : Fragment() {
     lateinit var navController: NavController
     lateinit var binding: FragmentTasksBinding
-    val tasksList: MutableList<Tasks> = mutableListOf()
+    var tasksList: MutableList<Tasks> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,40 +31,61 @@ class TasksFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recAdapter = CustomRecyclerViewAdapter()
+        var newTasks: MutableList<Tasks> = mutableListOf()
+        var bool: Boolean = true
+        val recAdapter = CustomRecyclerViewAdapter() { taskList, position ->
+            AlertDialog.Builder(context).setTitle("Delete this item?")
+                .setPositiveButton("Yes") { di, _ ->
+                    taskList.removeAt(position)
+                    tasksList.removeAt(position)
+                    recyclerView.adapter?.notifyDataSetChanged()
+                    recyclerView.adapter?.notifyItemRemoved(position);
+
+
+                    recyclerView.clearOnChildAttachStateChangeListeners()
+                }.setNegativeButton("No") { di, _ ->
+                di.dismiss()
+            }.show()
+        }
+
+//        recAdapter.task = newTasks
+        recyclerView.adapter = recAdapter
         val navHostFragment =
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-with(binding) {
-    recyclerView.adapter = recAdapter
-    recyclerView.layoutManager = LinearLayoutManager(context)
+        with(binding) {
+            recyclerView.adapter = recAdapter
+            recyclerView.layoutManager = LinearLayoutManager(context)
 
-    tasksGroup.visibility = View.GONE
+            tasksGroup.visibility = View.GONE
 
-    btnAddTask.setOnClickListener {
-        if (edtTitle.text?.isNotEmpty() == true
-            && edtDescription.text?.isNotEmpty() == true
-        ) {
-            val task =
-                Tasks(edtTitle.text.toString(), edtDescription.text.toString())
+            btnAddTask.setOnClickListener {
+                if (edtTitle.text?.isNotEmpty() == true
+                    && edtDescription.text?.isNotEmpty() == true
+                ) {
+                    val task =
+                        Tasks(edtTitle.text.toString(), edtDescription.text.toString())
 
-            tasksList.add(task)
-            recAdapter.updateData(tasksList)
-            it.hideKeyboard()
+                    tasksList.add(task)
+
+
+                    recAdapter.updateData(tasksList)
+
+                    it.hideKeyboard()
+                }
+
+                tasksGroup.visibility = View.VISIBLE
+                newTaskGroup.visibility = View.GONE
+            }
         }
 
-        tasksGroup.visibility = View.VISIBLE
-        newTaskGroup.visibility = View.GONE
-    }
-}
-
-        btnTaskCreateStart.setOnClickListener {
+        binding.btnTaskCreateStart.setOnClickListener {
             binding.tasksGroup.visibility = View.GONE
             binding.newTaskGroup.visibility = View.VISIBLE
         }
 
-        btnSeeTasks.setOnClickListener {
+        binding.btnSeeTasks.setOnClickListener {
             binding.tasksGroup.visibility = View.VISIBLE
             binding.newTaskGroup.visibility = View.GONE
         }

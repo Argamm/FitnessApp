@@ -74,4 +74,9 @@
     <string name="_2500">/2500</string>
     <string name="_10000">/10000</string>
     <string name="walk_counter">Walk Counter</string>
+    <string name="login">Login</string>
+    <string name="sing_up">Not a member? Sing up now</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="_null">null</string>
 </resources>
