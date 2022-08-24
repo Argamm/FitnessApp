@@ -9,7 +9,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/myToolbar"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
         android:background="#67A6A6"
         app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment"
@@ -24,7 +24,7 @@
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/space_0"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/space_0"
         android:background="@drawable/navigation_background"
         app:itemHorizontalTranslationEnabled="true"
         app:itemIconTint="@color/bottom_nav_selector"

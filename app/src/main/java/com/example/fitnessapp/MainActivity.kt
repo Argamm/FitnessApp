@@ -6,40 +6,46 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.fitnessapp.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
-        private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
+    lateinit var bottom_nav: BottomNavigationView
+    lateinit var myToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val sharedPreference =
+            (this).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
+
+        val language = sharedPreference.getString(LANG, "")
+        setLocale(this, language)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        bottom_nav.visibility = View.GONE
-
-        binding.myToolbar.visibility = View.GONE
+        bottom_nav = binding.bottomNav
+        myToolbar = binding.myToolbar
 
         bottom_nav.menu.findItem(R.id.homeFragment2).isChecked = true//first checked item
 
         bottom_nav.setupWithNavController(navController)
         btnNavClickHandler()
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.myToolbar)
+        val toolbar = findViewById<Toolbar>(R.id.myToolbar)
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)//cuyc a talis het gnalu slaqy
@@ -86,15 +92,16 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> onBackPressed()
             R.id.toolbarExit -> {
-                AlertDialog.Builder(this).setTitle("Exit?").setPositiveButton("Ok") { _, _ ->
+                AlertDialog.Builder(this).setTitle(getString(R.string.exit_)).setPositiveButton(getString(
+                                    R.string.ok)) { _, _ ->
                     this.finish()
-                }.setNegativeButton("Cancel") { di, _ ->
+                }.setNegativeButton(getString(R.string.cancel_)) { di, _ ->
                     di.cancel()
                 }.show()
             }
             R.id.toolbarSettings -> {
 //                Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.action_myProfileFragmentNav_to_mineProfileFragment)
+                navController.navigate(R.id.myProfileFragmentNav)
 
             }
             R.id.toolbarSearch -> Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
@@ -104,8 +111,3 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-fun View.hideKeyboard() {
-    val inputManager =
-        context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    inputManager.hideSoftInputFromWindow(windowToken, 0)
-}

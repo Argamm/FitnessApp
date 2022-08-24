@@ -22,13 +22,10 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.fitnessapp.MainActivity
-import com.example.fitnessapp.R
+import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentAnalyticsBinding
-import com.example.fitnessapp.fragment.EDT_TARGET_WEIGHT
-import com.example.fitnessapp.fragment.PREFERENCE_NAME
-import com.example.fitnessapp.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_analytics.*
+
 
 class AnalyticsFragment : Fragment(), SensorEventListener {
     private var sensorManager: SensorManager? = null
@@ -85,11 +82,11 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
     private fun buttonSetCurrentWeight() {
         binding.btnSetWeight.setOnClickListener {
             AlertDialog.Builder(context)
-                .setTitle("Set ${edt_current_weight.text.toString()} Weight?")
-                .setPositiveButton("Set") { _, _ ->
+                .setTitle("${getString(R.string.set)} ${edt_current_weight.text.toString()} ${getString(R.string.weight)}")
+                .setPositiveButton(getString(R.string.set)) { _, _ ->
                     sharedPreferences.edit().putString(EDT_TARGET_WEIGHT, binding.edtCurrentWeight.text.toString()).apply()
 
-                }.setNegativeButton("Cancel") { dialog, _ ->
+                }.setNegativeButton(getString(R.string.cancel_)) { dialog, _ ->
                     dialog.cancel()
                 }.show()
             it.hideKeyboard()
@@ -147,13 +144,13 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
 
     private fun restSteps() {
         tv_steps_token.setOnClickListener {
-            Toast.makeText(context, "Long tap to rest steps", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.restStepsCounter), Toast.LENGTH_SHORT).show()
 
         }
 
         tv_steps_token.setOnLongClickListener {
             previousTotalSteps = totalSteps
-            tv_steps_token.text = "0"
+            tv_steps_token.text = getString(R.string._0)
             saveData()
 
             true
@@ -164,14 +161,14 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
     private fun saveData() {
         val sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)
         val editor = sharedPreferences?.edit()
-        editor?.putFloat("key1", previousTotalSteps)
+        editor?.putFloat(KYE1, previousTotalSteps)
         editor?.apply()
     }
 
     private fun loadData() {
         val sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)
 
-        val savedNumber = sharedPreferences?.getFloat("key1", 0f)
+        val savedNumber = sharedPreferences?.getFloat(KYE1, 0f)
 //        Log.d("MainActivity", "$savedNumber")
         if (savedNumber != null) {
             previousTotalSteps = savedNumber

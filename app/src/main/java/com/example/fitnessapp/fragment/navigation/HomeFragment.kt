@@ -27,9 +27,6 @@ import com.example.fitnessapp.databinding.FragmentHomeBinding
 import com.example.fitnessapp.fragment.navigation.home.MyDialogFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
-const val INFO = "info"
-const val IMG = "img"
-const val NAME = "name"
 
 class HomeFragment : Fragment() {
 

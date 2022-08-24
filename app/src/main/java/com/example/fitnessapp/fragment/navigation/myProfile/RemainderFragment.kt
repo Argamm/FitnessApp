@@ -10,7 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import com.example.fitnessapp.channelID
 import com.example.fitnessapp.databinding.FragmentRemainderBinding
+import com.example.fitnessapp.messageExtra
+import com.example.fitnessapp.notificationID
+import com.example.fitnessapp.titleExtra
 import kotlinx.android.synthetic.main.fragment_remainder.*
 import java.util.*
 

@@ -60,11 +60,14 @@ class MyProfileFragment : Fragment() {
 
             }
             tvExit.setOnClickListener {
-                AlertDialog.Builder(context).setTitle("Exit?").setPositiveButton("Ok") {_,_->
+                AlertDialog.Builder(context).setTitle(getString(R.string.exit_)).setPositiveButton(getString(R.string.ok)) {_,_->
                     activity?.finish()
-                }.setNegativeButton("Cancel") {di, _->
+                }.setNegativeButton(getString(R.string.cancel_)) {di, _->
                     di.cancel()
                 }.show()
+            }
+            tvLanguage.setOnClickListener {
+                navController.navigate(R.id.action_myProfileFragmentNav_to_languageFragment)
             }
         }
     }

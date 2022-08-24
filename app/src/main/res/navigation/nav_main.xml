@@ -95,6 +95,9 @@
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action
+            android:id="@+id/action_myProfileFragmentNav_to_languageFragment"
+            app:destination="@id/languageFragment" />
     </fragment>
     <fragment
         android:id="@+id/trainingsFragment2"
@@ -165,4 +168,8 @@
             android:id="@+id/action_loginFragment_to_selectGenderFragment"
             app:destination="@id/selectGenderFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.myProfile.LanguageFragment"
+        android:label="LanguageFragment" />
 </navigation>

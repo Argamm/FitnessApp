@@ -10,20 +10,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.fitnessapp.MainActivity
-import com.example.fitnessapp.R
+import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentLoginBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-const val PREFERENCE_NAME = "PREFERENCE_NAME"
-const val BOOLEAN_CHECK = "BOOLEAN_CHECK"
-const val PASSWORD_STR = "PASSWORD_STR"
-const val EMAIL_STR = "EMAIL_STR"
 
 class LoginFragment : Fragment() {
     lateinit var sharedPreference: SharedPreferences
@@ -43,6 +39,11 @@ class LoginFragment : Fragment() {
         sharedPreference =
             (activity as MainActivity).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
 
+        val toolBar = activity?.findViewById<Toolbar>(R.id.myToolbar)
+        val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
+        toolBar?.visibility = View.GONE
+        bottomNav?.visibility = View.GONE
+
         val navHostFragment =
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
@@ -52,25 +53,24 @@ class LoginFragment : Fragment() {
 
             btnLogin.setOnClickListener {
                 if (!isValidEmail(edtEmail.text.toString()))
-                    Toast.makeText(context, "wrong email", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.wrongEmail), Toast.LENGTH_SHORT).show()
                 else if (!isValidPassword(binding.edtPassword.text.toString()))
-                    Toast.makeText(context, "wrong password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.WrongPassword), Toast.LENGTH_SHORT).show()
                 else {
-                    val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
-                    val myToolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.myToolbar)
+//                    val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
+//                    val myToolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.myToolbar)
 
                     if (edtEmail.text.toString() == sharedPreference.getString(EMAIL_STR, "")
                         && edtPassword.text.toString() == sharedPreference.getString(PASSWORD_STR, "")
                     ) {
-                        navBar?.visibility = View.VISIBLE
-                        myToolbar?.visibility = View.VISIBLE
+                        toolBar?.visibility = View.VISIBLE
+                        bottomNav?.visibility = View.VISIBLE
                         navController.navigate(R.id.action_loginFragment_to_homeFragment2)
                     } else {
-                        Toast.makeText(context, "Wrong inputs", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.WrongInputs), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-
             tvSingUp.setOnClickListener {
                 navController.navigate(R.id.action_loginFragment_to_selectGenderFragment)
             }
@@ -108,53 +108,5 @@ class LoginFragment : Fragment() {
         override fun afterTextChanged(p0: Editable?) {
         }
     }
-
-
-//    private fun isValidEmail(email: String): Boolean {
-////        if ((email.contains("mail.ru") && email.length >= 8) || (email.contains("gmail.com") && email.length >= 11))
-////            return true
-//        val pattern: Pattern
-//        val emailPattern =
-//            "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
-//        pattern = Pattern.compile(emailPattern)
-//        val matcher: Matcher = pattern.matcher(email.toString())
-//        return matcher.matches()
-//
-//    }
-//
-//
-//    private fun isValidPassword(password: String): Boolean {
-//        if (password.length < 8 || password == "12345678" || password == "00000000" || password == "87654321")
-//            return false
-//        if (password.firstOrNull { it.isDigit() } == null) return false
-//        if (password.filter { it.isLetter() }.firstOrNull { it.isUpperCase() } == null) return false
-//        if (password.filter { it.isLetter() }.firstOrNull { it.isLowerCase() } == null) return false
-//        if (password.firstOrNull { !it.isLetterOrDigit() } == null) return false
-//
-//        return true
-//    }
-
 }
 
-fun isValidPassword(password: String): Boolean {
-    if (password.length < 8 || password == "12345678" || password == "00000000" || password == "87654321")
-        return false
-    if (password.firstOrNull { it.isDigit() } == null) return false
-    if (password.filter { it.isLetter() }.firstOrNull { it.isUpperCase() } == null) return false
-    if (password.filter { it.isLetter() }.firstOrNull { it.isLowerCase() } == null) return false
-    if (password.firstOrNull { !it.isLetterOrDigit() } == null) return false
-
-    return true
-}
-
-fun isValidEmail(email: String): Boolean {
-//        if ((email.contains("mail.ru") && email.length >= 8) || (email.contains("gmail.com") && email.length >= 11))
-//            return true
-    val pattern: Pattern
-    val emailPattern =
-        "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
-    pattern = Pattern.compile(emailPattern)
-    val matcher: Matcher = pattern.matcher(email.toString())
-    return matcher.matches()
-
-}

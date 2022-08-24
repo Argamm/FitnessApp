@@ -12,9 +12,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessapp.MainActivity
+import com.example.fitnessapp.PREFERENCE_NAME
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentTasksBinding
-import com.example.fitnessapp.fragment.PREFERENCE_NAME
 import com.example.fitnessapp.fragment.adapter.CustomRecyclerViewAdapter
 import com.example.fitnessapp.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_tasks.*
@@ -43,8 +43,8 @@ class TasksFragment : Fragment() {
         var newTasks: MutableList<Tasks> = mutableListOf()
         var bool: Boolean = true
         val recAdapter = CustomRecyclerViewAdapter() { taskList, position ->
-            AlertDialog.Builder(context).setTitle("Delete this item?")
-                .setPositiveButton("Yes") { di, _ ->
+            AlertDialog.Builder(context).setTitle(getString(R.string.deleteItem))
+                .setPositiveButton(getString(R.string.yes)) { di, _ ->
                     taskList.removeAt(position)
                     tasksList.removeAt(position)
                     recyclerView.adapter?.notifyDataSetChanged()
@@ -52,7 +52,7 @@ class TasksFragment : Fragment() {
 
 
                     recyclerView.clearOnChildAttachStateChangeListeners()
-                }.setNegativeButton("No") { di, _ ->
+                }.setNegativeButton(getString(R.string.no)) { di, _ ->
                 di.dismiss()
             }.show()
         }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentCustomTrainingsBinding
 import com.example.fitnessapp.fragment.navigation.customTrainings.CustomTrainFragment
 import com.example.fitnessapp.fragment.navigation.customTrainings.TasksFragment
@@ -27,7 +28,7 @@ class CustomTrainingsFragment:Fragment() {
 
 
         val list = listOf(CustomTrainFragment(), TasksFragment())
-        val listNames = listOf("My Trainings", "Tasks")
+        val listNames = listOf(getString(R.string.myTrainings), getString(R.string.tasks))
 
         binding.viewPagerCustomTrain.adapter = ViewPagerAdapter(this, list)
 

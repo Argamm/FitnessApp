@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentRateUsBinding
 
 
@@ -22,8 +23,8 @@ class RateUsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val totalStars = "Total Stars:: " + binding.rating.numStars
-        val ratingA = "Rating :: " + binding.rating.rating
+        val totalStars = getString(R.string.totalStars) + binding.rating.numStars
+        val ratingA = getString(R.string.rating) + binding.rating.rating
 
 
         binding.btnRate.setOnClickListener {
