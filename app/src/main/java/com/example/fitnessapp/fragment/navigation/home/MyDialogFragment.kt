@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.fitnessapp.databinding.FragmentDialogBinding
 
-class MyDialogFragment(val img: Int, val str: String) : DialogFragment() {
+class MyDialogFragment(val img: String?, val str: String) : DialogFragment() {
     lateinit var binding: FragmentDialogBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,12 +21,11 @@ class MyDialogFragment(val img: Int, val str: String) : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.lottieRandom.setAnimation(img)
+        img?.toInt()?.let { binding.lottieRandom.setAnimation(it) }
         binding.tvRandom.text = str
 
         binding.floatingActionButton.setOnClickListener {
             dialog?.dismiss()
         }
     }
-    
 }

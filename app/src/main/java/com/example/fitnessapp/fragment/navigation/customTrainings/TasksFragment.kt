@@ -41,17 +41,17 @@ class TasksFragment : Fragment() {
             (activity as MainActivity).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
 
         var newTasks: MutableList<Tasks> = mutableListOf()
-        var bool: Boolean = true
+
         val recAdapter = CustomRecyclerViewAdapter() { taskList, position ->
             AlertDialog.Builder(context).setTitle(getString(R.string.deleteItem))
-                .setPositiveButton(getString(R.string.yes)) { di, _ ->
+                .setPositiveButton(getString(R.string.yes)) { _, _ ->
                     taskList.removeAt(position)
                     tasksList.removeAt(position)
+
                     recyclerView.adapter?.notifyDataSetChanged()
                     recyclerView.adapter?.notifyItemRemoved(position);
-
-
                     recyclerView.clearOnChildAttachStateChangeListeners()
+
                 }.setNegativeButton(getString(R.string.no)) { di, _ ->
                 di.dismiss()
             }.show()

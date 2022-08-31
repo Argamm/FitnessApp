@@ -17,8 +17,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentLoginBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 
 class LoginFragment : Fragment() {
@@ -53,21 +51,27 @@ class LoginFragment : Fragment() {
 
             btnLogin.setOnClickListener {
                 if (!isValidEmail(edtEmail.text.toString()))
-                    Toast.makeText(context, getString(R.string.wrongEmail), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.wrongEmail), Toast.LENGTH_SHORT)
+                        .show()
                 else if (!isValidPassword(binding.edtPassword.text.toString()))
-                    Toast.makeText(context, getString(R.string.WrongPassword), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.WrongPassword), Toast.LENGTH_SHORT)
+                        .show()
                 else {
 //                    val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
 //                    val myToolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.myToolbar)
 
                     if (edtEmail.text.toString() == sharedPreference.getString(EMAIL_STR, "")
-                        && edtPassword.text.toString() == sharedPreference.getString(PASSWORD_STR, "")
+                        && edtPassword.text.toString() == sharedPreference.getString(
+                            PASSWORD_STR,
+                            ""
+                        )
                     ) {
                         toolBar?.visibility = View.VISIBLE
                         bottomNav?.visibility = View.VISIBLE
                         navController.navigate(R.id.action_loginFragment_to_homeFragment2)
                     } else {
-                        Toast.makeText(context, getString(R.string.WrongInputs), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.WrongInputs), Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
             }

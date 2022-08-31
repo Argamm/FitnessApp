@@ -85,6 +85,7 @@
     <string name="russian">Русский</string>
     <string name="set_language">Set Language</string>
     <string name="change_language">Change Language</string>
+
     <string name="exit_">Exit?</string>
     <string name="ok">Ok</string>
     <string name="cancel_">Cancel</string>
@@ -110,4 +111,10 @@
     <string name="deleteItem">Delete this item?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="let_s_start">Let\'s start</string>
+    <string name="start">Start</string>
+    <string name="you_finished_that_exercise_rest_and_enjoy_life">You Finished That Exercise, Rest And Enjoy Life!!!</string>
+    <string name="exercising">Exercising</string>
+    <string name="restTime">Rest Time</string>
+    <string name="exercise">Exercise</string>
 </resources>

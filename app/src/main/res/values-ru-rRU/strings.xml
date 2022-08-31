@@ -87,4 +87,33 @@
     <string name="set_language">Установить язык</string>
     <string name="change_language">изменить язык</string>
 
+    <string name="exit_">Выход?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel_">Отмена</string>
+    <string name="female">женский</string>
+    <string name="male">Мужской</string>
+    <string name="wrongEmail">Неправильный адрес электронной почты</string>
+    <string name="WrongPassword">неправильный пароль</string>
+    <string name="WrongInputs">Неверные данные</string>
+    <string name="withUppercase">Имя должно начинаться с заглавной буквы</string>
+    <string name="ageSize">Возраст должен быть старше 10 и младше 80</string>
+    <string name="weightSize">Вес должен быть выше 49 и ниже 200</string>
+    <string name="heightSize">Рост должен быть выше 129 и ниже 260.</string>
+    <string name="wrongEmail_">Неверный формат электронной почты, попробуйте еще раз с правильным!</string>
+    <string name="passwordWrong">Пароль должен быть длиннее 8 символов, содержать одну прописную, одну строчную, одну букву и один символ.</string>
+    <string name="shotr">короткий</string>
+    <string name="myTrainings">Мои тренинги</string>
+    <string name="tasks">Задачи</string>
+    <string name="set">Установить</string>
+    <string name="restStepsCounter">Нажмите и удерживайте, чтобы сбросить шаги</string>
+    <string name="rating">\"Рейтинг :: \"</string>
+    <string name="totalStars">\"Всего звезд:: \"</string>
+    <string name="notFound">не обнаружена</string>
+    <string name="deleteItem">Удалить этот элемент?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="let_s_start">Давайте начнем</string>
+    <string name="start">Начинать</string>
+    <string name="you_finished_that_exercise_rest_and_enjoy_life">Вы закончили это упражнение, отдыхайте и наслаждайтесь жизнью!!!</string>
+
 </resources>

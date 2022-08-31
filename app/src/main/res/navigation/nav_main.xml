@@ -112,11 +112,18 @@
         <action
             android:id="@+id/action_trainingsFragment2_to_shortTrainingsFragment"
             app:destination="@id/shortTrainingsFragment" />
+        <action
+            android:id="@+id/action_trainingsFragment2_to_armsWorkoutPlaneFragment"
+            app:destination="@id/armsWorkoutPlaneFragment" />
     </fragment>
     <fragment
         android:id="@+id/armsFragment"
         android:name="com.example.fitnessapp.fragment.navigation.trainings.ArmsFragment"
-        android:label="ArmsFragment" />
+        android:label="ArmsFragment" >
+        <action
+            android:id="@+id/action_armsFragment_to_armsWorkoutPlaneFragment"
+            app:destination="@id/armsWorkoutPlaneFragment" />
+    </fragment>
     <fragment
         android:id="@+id/legsFragment"
         android:name="com.example.fitnessapp.fragment.navigation.trainings.LegsFragment"
@@ -172,4 +179,13 @@
         android:id="@+id/languageFragment"
         android:name="com.example.fitnessapp.fragment.navigation.myProfile.LanguageFragment"
         android:label="LanguageFragment" />
+    <fragment
+        android:id="@+id/armsWorkoutPlaneFragment"
+        android:name="com.example.fitnessapp.fragment.navigation.trainings.arms.ArmsWorkoutPlaneFragment"
+        android:label="ArmsWorkoutPlaneFragment" >
+        <argument
+            android:name="list"
+            app:argType="integer[]"
+            app:nullable="true" />
+    </fragment>
 </navigation>

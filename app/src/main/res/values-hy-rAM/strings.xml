@@ -87,4 +87,33 @@
     <string name="set_language">Սահմանել Լեզուն</string>
     <string name="change_language">Փոխել լեզուն</string>
 
+    <string name="exit_">Դուրս գալ?</string>
+    <string name="ok">Այո</string>
+    <string name="cancel_">Չեղարկել</string>
+    <string name="female">Արական</string>
+    <string name="male">Իգական</string>
+    <string name="wrongEmail">Սխալ էլ․ հասցե</string>
+    <string name="WrongPassword">Սխալ գաղտնաբառ</string>
+    <string name="WrongInputs">Սխալ մուտքագրում</string>
+    <string name="withUppercase">Անունը պետք է սկսվի մեծատառով</string>
+    <string name="ageSize">Տարիքը պետք է լինի բարձր 10-ից և ցածր 80-ից</string>
+    <string name="weightSize">Քաշը պետք է լինի բարձր 49-ից և ցածր 200-ից</string>
+    <string name="heightSize">Բոյը պետք է լինի բարձր 129-ից և ցածր 260-ից</string>
+    <string name="wrongEmail_">Էլ․ հասցեի սխալ ֆորմատ։ Կրկին փորձիր!</string>
+    <string name="passwordWrong">Գաղտնաբառի երկարությունը պետք է լինի 8 և ավել,առնվազն պարունակի մեկ մեծատառ, մեկ փոքրատառ, մեկ թիվ և մեկ սիմվոլ</string>
+    <string name="shotr">Կարճ</string>
+    <string name="myTrainings">Իմ Մարզումները</string>
+    <string name="tasks">Առաջադրանքներ</string>
+    <string name="set">Սահմանել</string>
+    <string name="restStepsCounter">Երկար սեղմած պահել զրոյացնելու համար</string>
+    <string name="rating">\"Վարկանիշ :: \"</string>
+    <string name="totalStars">\"Ընդհանուր աստղեր:: \"</string>
+    <string name="notFound">Չի գտնվել</string>
+    <string name="deleteItem">Ջնջել այս կետը?</string>
+    <string name="yes">Այո</string>
+    <string name="no">Ոչ</string>
+    <string name="let_s_start">Եկեք սկսենք</string>
+    <string name="start">Սկսել</string>
+    <string name="you_finished_that_exercise_rest_and_enjoy_life">Դու ավարտեցիր այս մարզումը, հանգստացիր և վայելիր կյանքը!!!</string>
+
 </resources>

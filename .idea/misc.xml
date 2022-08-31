@@ -52,6 +52,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_abs.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_analytics.xml" value="0.264" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_arms.xml" value="0.25" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_arms_workout_plane.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_communicate.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_custom_train.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/fragment_custom_trainings.xml" value="0.14266304347826086" />
@@ -80,6 +81,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/list_item.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/list_row.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/model_tasks.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/model_trainings.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/menu_bottom.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/show_menu.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FitnessApp/app/src/main/res/menu/toolbar_menu.xml" value="0.24895833333333334" />

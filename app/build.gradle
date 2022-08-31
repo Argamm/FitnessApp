@@ -39,6 +39,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildscript {
+        repositories {
+            google()
+            mavenCentral()
+        }
+    }
 }
 
 dependencies {
@@ -57,5 +63,14 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'//for walk counter
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+
+    //glide for image url
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 
 }

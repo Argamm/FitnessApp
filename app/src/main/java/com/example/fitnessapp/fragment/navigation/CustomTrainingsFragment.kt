@@ -27,8 +27,8 @@ class CustomTrainingsFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val list = listOf(CustomTrainFragment(), TasksFragment())
-        val listNames = listOf(getString(R.string.myTrainings), getString(R.string.tasks))
+        val list = listOf(TasksFragment(), CustomTrainFragment() )
+        val listNames = listOf( getString(R.string.tasks),getString(R.string.myTrainings))
 
         binding.viewPagerCustomTrain.adapter = ViewPagerAdapter(this, list)
 
