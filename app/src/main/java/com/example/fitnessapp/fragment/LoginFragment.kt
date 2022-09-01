@@ -18,7 +18,6 @@ import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentLoginBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
 class LoginFragment : Fragment() {
     lateinit var sharedPreference: SharedPreferences
     lateinit var navController: NavController
@@ -48,7 +47,6 @@ class LoginFragment : Fragment() {
 
         with(binding) {
             btnLogin.isEnabled = false
-
             btnLogin.setOnClickListener {
                 if (!isValidEmail(edtEmail.text.toString()))
                     Toast.makeText(context, getString(R.string.wrongEmail), Toast.LENGTH_SHORT)
@@ -57,9 +55,6 @@ class LoginFragment : Fragment() {
                     Toast.makeText(context, getString(R.string.WrongPassword), Toast.LENGTH_SHORT)
                         .show()
                 else {
-//                    val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_nav)
-//                    val myToolbar = activity?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.myToolbar)
-
                     if (edtEmail.text.toString() == sharedPreference.getString(EMAIL_STR, "")
                         && edtPassword.text.toString() == sharedPreference.getString(
                             PASSWORD_STR,
@@ -78,14 +73,10 @@ class LoginFragment : Fragment() {
             tvSingUp.setOnClickListener {
                 navController.navigate(R.id.action_loginFragment_to_selectGenderFragment)
             }
-
             edtEmail.addTextChangedListener(loginTextWatcher)
             edtPassword.addTextChangedListener(loginTextWatcher)
         }
-
-
     }
-
 
     private val loginTextWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -98,15 +89,16 @@ class LoginFragment : Fragment() {
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            val emailInput = binding.edtEmail.text.toString().trim()
-            val passwordInput = binding.edtPassword.text.toString().trim()
+            with(binding) {
+                val emailInput = edtEmail.text.toString().trim()
+                val passwordInput = edtPassword.text.toString().trim()
 
-            if (emailInput.isNotEmpty() && passwordInput.isNotEmpty()) {
-                binding.btnLogin.isEnabled = true
-                binding.btnLogin.setBackgroundColor(Color.WHITE)
-
+                if (emailInput.isNotEmpty() && passwordInput.isNotEmpty()) {
+                    btnLogin.isEnabled = true
+                    btnLogin.setBackgroundColor(Color.WHITE)
+                }
+                btnLogin.isEnabled = emailInput.isNotEmpty() && passwordInput.isNotEmpty()
             }
-            binding.btnLogin.isEnabled = emailInput.isNotEmpty() && passwordInput.isNotEmpty()
         }
 
         override fun afterTextChanged(p0: Editable?) {

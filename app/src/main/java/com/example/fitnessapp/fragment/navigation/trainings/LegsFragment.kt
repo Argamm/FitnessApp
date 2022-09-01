@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.databinding.FragmentLegsBinding
 
-class LegsFragment:Fragment() {
+class LegsFragment : Fragment() {
     lateinit var binding: FragmentLegsBinding
     override fun onCreateView(
         inflater: LayoutInflater,

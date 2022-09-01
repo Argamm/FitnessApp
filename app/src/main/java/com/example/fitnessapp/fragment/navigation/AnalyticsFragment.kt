@@ -26,7 +26,6 @@ import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentAnalyticsBinding
 import kotlinx.android.synthetic.main.fragment_analytics.*
 
-
 class AnalyticsFragment : Fragment(), SensorEventListener {
     private var sensorManager: SensorManager? = null
     private var running = false
@@ -46,7 +45,6 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
         return binding.root
     }
 
-
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -63,7 +61,6 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
         }
 
         buttonSetCurrentWeight()
-
         binding.progressCircular.apply {
             setProgressWithAnimation(0f)
         }
@@ -71,20 +68,25 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
         if (isPermissionGranted()) {
             requestPermission()
         }
-
         loadData()
         restSteps()
         sensorManager = context?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-
-
     }
 
     private fun buttonSetCurrentWeight() {
         binding.btnSetWeight.setOnClickListener {
             AlertDialog.Builder(context)
-                .setTitle("${getString(R.string.set)} ${edt_current_weight.text.toString()} ${getString(R.string.weight)}")
+                .setTitle(
+                    "${getString(R.string.set)} ${edt_current_weight.text.toString()} ${
+                        getString(
+                            R.string.weight
+                        )
+                    }"
+                )
                 .setPositiveButton(getString(R.string.set)) { _, _ ->
-                    sharedPreferences.edit().putString(EDT_TARGET_WEIGHT, binding.edtCurrentWeight.text.toString()).apply()
+                    sharedPreferences.edit()
+                        .putString(EDT_TARGET_WEIGHT, binding.edtCurrentWeight.text.toString())
+                        .apply()
 
                 }.setNegativeButton(getString(R.string.cancel_)) { dialog, _ ->
                     dialog.cancel()
@@ -145,17 +147,14 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
     private fun restSteps() {
         tv_steps_token.setOnClickListener {
             Toast.makeText(context, getString(R.string.restStepsCounter), Toast.LENGTH_SHORT).show()
-
         }
 
         tv_steps_token.setOnLongClickListener {
             previousTotalSteps = totalSteps
             tv_steps_token.text = getString(R.string._0)
             saveData()
-
             true
         }
-
     }
 
     private fun saveData() {
@@ -167,9 +166,7 @@ class AnalyticsFragment : Fragment(), SensorEventListener {
 
     private fun loadData() {
         val sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)
-
         val savedNumber = sharedPreferences?.getFloat(KYE1, 0f)
-//        Log.d("MainActivity", "$savedNumber")
         if (savedNumber != null) {
             previousTotalSteps = savedNumber
         }

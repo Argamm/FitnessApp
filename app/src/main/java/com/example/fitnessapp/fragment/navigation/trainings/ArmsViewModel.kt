@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fitnessapp.RetrofitHelper
 import com.example.fitnessapp.api.ApiService
-import com.example.fitnessapp.userAniumationDatas.UserTrainingsData
+import com.example.fitnessapp.userAniumationDatas.UserTrainingsList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ArmsViewModel:ViewModel() {
-    private val _anilList: MutableStateFlow<ArrayList<UserTrainingsData>?> = MutableStateFlow(null)
+    private val _anilList: MutableStateFlow<UserTrainingsList?> = MutableStateFlow(null)
     val animList = _anilList.asStateFlow()
 
     fun getTrainingsAnimation() {
@@ -25,5 +25,4 @@ class ArmsViewModel:ViewModel() {
             }
         }
     }
-
 }

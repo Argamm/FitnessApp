@@ -8,28 +8,24 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.fitnessapp.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
-    lateinit var bottom_nav: BottomNavigationView
-    lateinit var myToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val sharedPreference =
             (this).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
-
         val language = sharedPreference.getString(LANG, "")
         setLocale(this, language)
 
@@ -37,23 +33,17 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        bottom_nav = binding.bottomNav
-        myToolbar = binding.myToolbar
+        binding.bottomNav.menu.findItem(R.id.homeFragment2).isChecked = true//first checked item
+        binding.bottomNav.setupWithNavController(navController)
 
-        bottom_nav.menu.findItem(R.id.homeFragment2).isChecked = true//first checked item
-
-        bottom_nav.setupWithNavController(navController)
         btnNavClickHandler()
 
-        val toolbar = findViewById<Toolbar>(R.id.myToolbar)
-
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)//cuyc a talis het gnalu slaqy
-
+        setSupportActionBar(binding.myToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun btnNavClickHandler() {
-        bottom_nav.setOnItemSelectedListener { item ->
+        binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.myProfileFragmentNav -> {
                     navController.navigate(R.id.myProfileFragmentNav)
@@ -76,8 +66,8 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
             }
-            if (bottom_nav.visibility == View.GONE) {
-                bottom_nav.visibility = View.VISIBLE
+            if (binding.bottomNav.visibility == View.GONE) {
+                binding.bottomNav.visibility = View.VISIBLE
             }
             true
         }
@@ -92,22 +82,22 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> onBackPressed()
             R.id.toolbarExit -> {
-                AlertDialog.Builder(this).setTitle(getString(R.string.exit_)).setPositiveButton(getString(
-                                    R.string.ok)) { _, _ ->
+                AlertDialog.Builder(this).setTitle(getString(R.string.exit_)).setPositiveButton(
+                    getString(
+                        R.string.ok
+                    )
+                ) { _, _ ->
                     this.finish()
                 }.setNegativeButton(getString(R.string.cancel_)) { di, _ ->
                     di.cancel()
                 }.show()
             }
             R.id.toolbarSettings -> {
-//                Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
                 navController.navigate(R.id.myProfileFragmentNav)
-
             }
             R.id.toolbarSearch -> Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
         }
         return true
     }
-
 }
 

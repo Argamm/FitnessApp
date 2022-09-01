@@ -1,5 +1,6 @@
 package com.example.fitnessapp.fragment.navigation.customTrainings
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.SharedPreferences
@@ -19,7 +20,6 @@ import com.example.fitnessapp.fragment.adapter.CustomRecyclerViewAdapter
 import com.example.fitnessapp.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_tasks.*
 
-
 class TasksFragment : Fragment() {
     lateinit var navController: NavController
     lateinit var binding: FragmentTasksBinding
@@ -35,29 +35,24 @@ class TasksFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         sharedPreferences =
             (activity as MainActivity).getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
 
-        var newTasks: MutableList<Tasks> = mutableListOf()
-
-        val recAdapter = CustomRecyclerViewAdapter() { taskList, position ->
+        val recAdapter = CustomRecyclerViewAdapter { taskList, position ->
             AlertDialog.Builder(context).setTitle(getString(R.string.deleteItem))
                 .setPositiveButton(getString(R.string.yes)) { _, _ ->
                     taskList.removeAt(position)
                     tasksList.removeAt(position)
-
                     recyclerView.adapter?.notifyDataSetChanged()
-                    recyclerView.adapter?.notifyItemRemoved(position);
+                    recyclerView.adapter?.notifyItemRemoved(position)
                     recyclerView.clearOnChildAttachStateChangeListeners()
-
                 }.setNegativeButton(getString(R.string.no)) { di, _ ->
-                di.dismiss()
-            }.show()
+                    di.dismiss()
+                }.show()
         }
 
-//        recAdapter.task = newTasks
         recyclerView.adapter = recAdapter
         val navHostFragment =
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -66,7 +61,6 @@ class TasksFragment : Fragment() {
         with(binding) {
             recyclerView.adapter = recAdapter
             recyclerView.layoutManager = LinearLayoutManager(context)
-
             tasksGroup.visibility = View.GONE
 
             btnAddTask.setOnClickListener {
@@ -75,12 +69,8 @@ class TasksFragment : Fragment() {
                 ) {
                     val task =
                         Tasks(edtTitle.text.toString(), edtDescription.text.toString())
-
                     tasksList.add(task)
-
-
                     recAdapter.updateData(tasksList)
-
                     it.hideKeyboard()
                 }
                 tasksGroup.visibility = View.VISIBLE

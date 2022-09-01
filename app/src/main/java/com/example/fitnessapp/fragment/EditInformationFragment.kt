@@ -16,7 +16,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentEditInformationBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.fragment_edit_information.*
 
 
 class EditInformationFragment : Fragment() {
@@ -66,7 +65,6 @@ class EditInformationFragment : Fragment() {
 
     fun buttonClickHandler() {
         with(binding) {
-
             btnStart.setOnClickListener {
                 if (isValidInputs(
                         edtName.text.toString(),
@@ -77,7 +75,6 @@ class EditInformationFragment : Fragment() {
                         edtPasswordRegister.text.toString()
                     )
                 ) {
-
                     sharedPreferences.edit()
                         .putString(PASSWORD_STR, edtPasswordRegister.text.toString())
                         .apply()
@@ -92,21 +89,17 @@ class EditInformationFragment : Fragment() {
                     sharedPreferences.edit()
                         .putString(EDT_EMAIL, edtEmailRegister.text.toString()).apply()
                 }
-
                 toolBar.visibility = VISIBLE
                 bottomNav.visibility = VISIBLE
                 navController.navigate(R.id.action_editInformationFragment_to_homeFragment2)
-
             }
         }
     }
 
     private val checkTextWatcher: TextWatcher = object : TextWatcher {
-
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            btn_start.setTextColor(Color.rgb(173, 173, 173))
-            btn_start.setBackgroundResource(R.drawable.btn_background_before)
+            binding.btnStart.setTextColor(Color.rgb(173, 173, 173))
+            binding.btnStart.setBackgroundResource(R.drawable.btn_background_before)
             with(binding) {
                 if (edtName.text.isNullOrEmpty()
                     || edtAge.text.isNullOrEmpty()

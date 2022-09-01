@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.databinding.FragmentCustomTrainBinding
 
-class CustomTrainFragment:Fragment (){
+class CustomTrainFragment : Fragment() {
     lateinit var binding: FragmentCustomTrainBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,5 +17,4 @@ class CustomTrainFragment:Fragment (){
         binding = FragmentCustomTrainBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 }

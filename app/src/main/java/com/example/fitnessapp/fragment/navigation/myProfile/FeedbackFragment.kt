@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.fitnessapp.databinding.FragmentFeedbackBinding
 import kotlinx.android.synthetic.main.fragment_feedback.*
 
-class FeedbackFragment:Fragment() {
+class FeedbackFragment : Fragment() {
     lateinit var binding: FragmentFeedbackBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +26,7 @@ class FeedbackFragment:Fragment() {
 
         sendMessageClickHandler()
     }
+
     private fun sendMessageClickHandler() {
         binding.btnSendMessage.setOnClickListener {
             val text = edt_feedback.text.toString()

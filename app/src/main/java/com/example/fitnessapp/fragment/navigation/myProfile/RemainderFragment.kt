@@ -10,17 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.example.fitnessapp.channelID
+import com.example.fitnessapp.*
 import com.example.fitnessapp.databinding.FragmentRemainderBinding
-import com.example.fitnessapp.messageExtra
-import com.example.fitnessapp.notificationID
-import com.example.fitnessapp.titleExtra
 import kotlinx.android.synthetic.main.fragment_remainder.*
 import java.util.*
 
 
 class RemainderFragment : Fragment() {
-    lateinit var binding : FragmentRemainderBinding
+    lateinit var binding: FragmentRemainderBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,7 +26,6 @@ class RemainderFragment : Fragment() {
         binding = FragmentRemainderBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,14 +67,16 @@ class RemainderFragment : Fragment() {
         val timeFormat = android.text.format.DateFormat.getTimeFormat(activity?.applicationContext)
 
         AlertDialog.Builder(context)
-            .setTitle("Notification Scheduled")
+            .setTitle(getString(R.string.notification_scheduled))
             .setMessage(
-                "Title: " + title +
-                        "\nMessage: " + message +
-                        "\nAt: " + dateFormat.format(date) + " " + timeFormat.format(date)
+                getString(R.string.titlee) + title +
+                        "\n" + getString(R.string.mess) + message +
+                        "\n" + getString(R.string.at) + dateFormat.format(date) + " " + timeFormat.format(
+                    date
+                )
             )
-            .setPositiveButton("Set Remainder") { _, _ -> }
-            .setNegativeButton("Cancel") { di, _ ->
+            .setPositiveButton(getString(R.string.set_remaind)) { _, _ -> }
+            .setNegativeButton(getString(R.string.cancel)) { di, _ ->
                 di.cancel()
             }
             .show()

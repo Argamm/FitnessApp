@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvInfo"
             android:layout_width="match_parent"
@@ -136,6 +135,5 @@
         </HorizontalScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.core.widget.NestedScrollView>

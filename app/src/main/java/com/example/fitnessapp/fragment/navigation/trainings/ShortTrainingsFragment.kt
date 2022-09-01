@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.databinding.FragmentShortTrainingsBinding
 
-class ShortTrainingsFragment:Fragment() {
+class ShortTrainingsFragment : Fragment() {
     lateinit var binding: FragmentShortTrainingsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding= FragmentShortTrainingsBinding.inflate(inflater, container, false)
+        binding = FragmentShortTrainingsBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

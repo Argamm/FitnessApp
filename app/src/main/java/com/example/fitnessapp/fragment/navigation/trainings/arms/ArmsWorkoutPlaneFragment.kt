@@ -2,7 +2,6 @@ package com.example.fitnessapp.fragment.navigation.trainings.arms
 
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,6 @@ class ArmsWorkoutPlaneFragment : Fragment() {
     private var timerTwo: CountDownTimer? = null
     var array: IntArray = intArrayOf()
     var index = 0
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,12 +33,9 @@ class ArmsWorkoutPlaneFragment : Fragment() {
 
         with(binding) {
             lottieRandomTask.setAnimation(array[0])
-
             btnStartTimer.setOnClickListener {
                 tvTimeAndRest.text = getString(R.string.exercising)
-
                 startCountDownTimer(55000)
-
             }
         }
     }
@@ -51,7 +46,6 @@ class ArmsWorkoutPlaneFragment : Fragment() {
             override fun onTick(timeM: Long) {
                 binding.tvTimer.text = timeM.toString().substring(0, 2)
             }
-
             override fun onFinish() {
                 binding.tvTimeAndRest.text = getString(R.string.restTime)
                 startCountDownTimerTwo(20000)
@@ -61,7 +55,6 @@ class ArmsWorkoutPlaneFragment : Fragment() {
 
     private fun startCountDownTimerTwo(timeMillis: Long) {
         with(binding) {
-
             tvTimeAndRest.text = getString(R.string.restTime)
             lottieRandomTask.setAnimation(R.raw.rest_man)
             lottieRandomTask.playAnimation()

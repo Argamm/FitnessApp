@@ -116,4 +116,15 @@
     <string name="start">Սկսել</string>
     <string name="you_finished_that_exercise_rest_and_enjoy_life">Դու ավարտեցիր այս մարզումը, հանգստացիր և վայելիր կյանքը!!!</string>
 
+    <string name="exercising">Կատարիր վարժություն!!</string>
+    <string name="restTime">Հանգստացիր!!</string>
+    <string name="exercise">Վարժություն</string>
+
+    <string name="set_remaind">Սահմանել Հիշեցում</string>
+    <string name="notification_scheduled">Ծանուցումը պլանավորված է</string>
+    <string name="titlee">\"Վերնագիր: \"</string>
+        <string name="mess">Հաղորդագրություն:</string>
+    <string name="at">-ի:</string>
+    <string name="non">Չկա</string>
+
 </resources>

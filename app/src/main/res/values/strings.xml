@@ -87,7 +87,7 @@
     <string name="change_language">Change Language</string>
 
     <string name="exit_">Exit?</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel_">Cancel</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
@@ -117,4 +117,10 @@
     <string name="exercising">Exercising</string>
     <string name="restTime">Rest Time</string>
     <string name="exercise">Exercise</string>
+    <string name="set_remaind">Set Remainder</string>
+    <string name="notification_scheduled">Notification Scheduled</string>
+    <string name="titlee">\"Title: \"</string>
+    <string name="mess">Message:</string>
+    <string name="at">At:</string>
+    <string name="non">non</string>
 </resources>

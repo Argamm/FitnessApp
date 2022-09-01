@@ -39,13 +39,10 @@ fun isValidPassword(password: String): Boolean {
 }
 
 fun isValidEmail(email: String): Boolean {
-//        if ((email.contains("mail.ru") && email.length >= 8) || (email.contains("gmail.com") && email.length >= 11))
-//            return true
     val pattern: Pattern
     val emailPattern =
         "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
     pattern = Pattern.compile(emailPattern)
     val matcher: Matcher = pattern.matcher(email.toString())
     return matcher.matches()
-
 }

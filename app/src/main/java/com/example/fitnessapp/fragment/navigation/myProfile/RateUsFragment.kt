@@ -28,7 +28,8 @@ class RateUsFragment : Fragment() {
 
 
         binding.btnRate.setOnClickListener {
-            Toast.makeText(activity,"""
+            Toast.makeText(
+                activity, """
                         $totalStars
                         $ratingA
                         """.trimIndent(), Toast.LENGTH_LONG

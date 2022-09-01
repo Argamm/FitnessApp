@@ -13,19 +13,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-
-
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt_current_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textColor="@color/white"
-                android:inputType="number"
-                android:paddingVertical="@dimen/space_15"
                 android:background="@drawable/edt_back_new"
-                android:paddingHorizontal="@dimen/space_20"
                 android:hint="@string/edit_current_weight"
+                android:inputType="number"
+                android:paddingHorizontal="@dimen/space_20"
+                android:paddingVertical="@dimen/space_15"
+                android:textColor="@color/white"
                 android:textColorHint="@color/dark_t"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,12 +32,12 @@
                 android:id="@+id/btn_set_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/set_weight"
-                android:textSize="@dimen/size_18"
-                android:textColor="@color/white"
-                android:layout_marginTop="@dimen/space_15"
                 android:layout_marginHorizontal="@dimen/space_60"
+                android:layout_marginTop="@dimen/space_15"
                 android:background="@drawable/layout_background"
+                android:text="@string/set_weight"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_18"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_current_weight" />
@@ -68,22 +65,22 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvWalkCounter"
-                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/btn_set_weight"
-                android:text="@string/walk_counter"
+                android:layout_marginTop="@dimen/space_50"
                 android:gravity="center"
+                android:text="@string/walk_counter"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_26"
                 android:textStyle="bold"
                 app:fontFamily="@font/lato"
-                android:layout_marginTop="@dimen/space_50"
-                android:textSize="@dimen/size_26"/>
+                app:layout_constraintTop_toBottomOf="@+id/btn_set_weight" />
 
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                android:layout_marginTop="@dimen/space_30"
                 android:id="@+id/progress_circular"
                 android:layout_width="@dimen/space_200"
                 android:layout_height="@dimen/space_200"
+                android:layout_marginTop="@dimen/space_30"
                 android:layout_marginBottom="@dimen/space_50"
                 app:cpb_background_progressbar_color="#036359"
                 app:cpb_background_progressbar_width="@dimen/space_20"

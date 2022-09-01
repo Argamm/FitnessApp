@@ -8,48 +8,48 @@
     <RadioGroup
         android:id="@+id/radioGroupLanguages"
         android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.AppCompatRadioButton
-        android:id="@+id/radioBtnEnglish"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_50"
-        android:text="@string/english"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.appcompat.widget.AppCompatRadioButton
-        android:id="@+id/radioBtnArmenian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_100"
-        android:text="@string/armenian"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioBtnEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_50"
+            android:text="@string/english"
+            android:textColor="@color/white" />
 
-    <androidx.appcompat.widget.AppCompatRadioButton
-        android:id="@+id/radioBtnRussian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_100"
-        android:text="@string/russian"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioBtnArmenian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_100"
+            android:text="@string/armenian"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioBtnRussian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_100"
+            android:text="@string/russian"
+            android:textColor="@color/white" />
 
     </RadioGroup>
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSetLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/layout_background"
+        android:paddingHorizontal="@dimen/space_50"
         android:text="@string/change_language"
         android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

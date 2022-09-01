@@ -42,16 +42,18 @@ class SelectGenderFragment : Fragment() {
 
         val navHostFragment =
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-         navController = navHostFragment.navController
+        navController = navHostFragment.navController
 
+        selectGenderClickHandler()
+    }
+
+    private fun selectGenderClickHandler() {
         binding.imgWoman.setOnClickListener {
             sharedPreferences.edit().putString(EDT_GENDER, getString(R.string.female)).apply()
-
             navController.navigate(R.id.action_selectGenderFragment_to_editInformationFragment)
         }
         binding.imgMan.setOnClickListener {
             sharedPreferences.edit().putString(EDT_GENDER, getString(R.string.male)).apply()
-
             navController.navigate(R.id.action_selectGenderFragment_to_editInformationFragment)
         }
     }

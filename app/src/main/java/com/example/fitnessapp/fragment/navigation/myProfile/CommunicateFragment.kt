@@ -9,8 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.databinding.FragmentCommunicateBinding
 
-
-class CommunicateFragment:Fragment(){
+class CommunicateFragment : Fragment() {
     lateinit var binding: FragmentCommunicateBinding
     lateinit var intent: Intent
     override fun onCreateView(
@@ -27,7 +26,10 @@ class CommunicateFragment:Fragment(){
         with(binding) {
             btnFacebook.setOnClickListener {
                 intent = try {
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/profile.php?id=100074110905331"))
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://www.facebook.com/profile.php?id=100074110905331")
+                    )
                 } catch (e: Exception) {
                     Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com"))
                 }

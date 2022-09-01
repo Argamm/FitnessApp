@@ -35,10 +35,8 @@ class TrainingsFragment : Fragment() {
         )
 
         binding.viewPager.adapter = ViewPagerAdapter(this, list)
-
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = listNames[position]
         }.attach()
     }
-
 }

@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fitnessapp.R
 import com.example.fitnessapp.databinding.FragmentCustomTrainingsBinding
+import com.example.fitnessapp.fragment.adapter.ViewPagerAdapter
 import com.example.fitnessapp.fragment.navigation.customTrainings.CustomTrainFragment
 import com.example.fitnessapp.fragment.navigation.customTrainings.TasksFragment
-import com.example.fitnessapp.fragment.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
-class CustomTrainingsFragment:Fragment() {
+class CustomTrainingsFragment : Fragment() {
     lateinit var binding: FragmentCustomTrainingsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,14 +25,14 @@ class CustomTrainingsFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        val list = listOf(TasksFragment(), CustomTrainFragment() )
-        val listNames = listOf( getString(R.string.tasks),getString(R.string.myTrainings))
+        val list = listOf(TasksFragment(), CustomTrainFragment())
+        val listNames = listOf(getString(R.string.tasks), getString(R.string.myTrainings))
 
         binding.viewPagerCustomTrain.adapter = ViewPagerAdapter(this, list)
-
-        TabLayoutMediator(binding.tabLayoutCustomTrain, binding.viewPagerCustomTrain) { tab, position ->
+        TabLayoutMediator(
+            binding.tabLayoutCustomTrain,
+            binding.viewPagerCustomTrain
+        ) { tab, position ->
             tab.text = listNames[position]
         }.attach()
     }

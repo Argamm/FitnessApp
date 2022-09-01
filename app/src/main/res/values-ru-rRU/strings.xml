@@ -116,4 +116,14 @@
     <string name="start">Начинать</string>
     <string name="you_finished_that_exercise_rest_and_enjoy_life">Вы закончили это упражнение, отдыхайте и наслаждайтесь жизнью!!!</string>
 
+    <string name="exercising">Упражнения</string>
+    <string name="restTime">Время отдыха</string>
+    <string name="exercise">Упражнение</string>
+
+    <string name="set_remaind">Установить напоминание</string>
+    <string name="notification_scheduled">Уведомление запланировано</string>
+    <string name="titlee">\"Заголовок: \"</string>
+    <string name="mess">Сообщение:</string>
+    <string name="at">В:</string>
+    <string name="non">нет</string>
 </resources>

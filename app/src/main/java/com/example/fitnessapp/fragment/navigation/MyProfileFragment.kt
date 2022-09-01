@@ -26,7 +26,8 @@ class MyProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment =
+            activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
         myProfileSectionsClickHandler()
@@ -49,7 +50,10 @@ class MyProfileFragment : Fragment() {
             tvShare.setOnClickListener {
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "This is my App name `My Fitness App`. You can download it on PlayMarket")
+                    putExtra(
+                        Intent.EXTRA_TEXT,
+                        "This is my App name `My Fitness App`. You can download it on PlayMarket"
+                    )
                     type = "text/plain"
                 }
                 val shareIntent = Intent.createChooser(sendIntent, null)
@@ -60,9 +64,10 @@ class MyProfileFragment : Fragment() {
 
             }
             tvExit.setOnClickListener {
-                AlertDialog.Builder(context).setTitle(getString(R.string.exit_)).setPositiveButton(getString(R.string.ok)) {_,_->
-                    activity?.finish()
-                }.setNegativeButton(getString(R.string.cancel_)) {di, _->
+                AlertDialog.Builder(context).setTitle(getString(R.string.exit_))
+                    .setPositiveButton(getString(R.string.ok)) { _, _ ->
+                        activity?.finish()
+                    }.setNegativeButton(getString(R.string.cancel_)) { di, _ ->
                     di.cancel()
                 }.show()
             }
